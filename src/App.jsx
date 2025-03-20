@@ -1,4 +1,5 @@
 import "./app.scss";
+import { useState } from "react";
 import perfil from "./assets/perfil.png";
 import html from "./assets/html5.svg";
 import sass from "./assets/sass.png";
@@ -20,8 +21,44 @@ import webstore from "./assets/webstoreCell.png";
 import pepsi from "./assets/pepsiCell.png";
 import anoNovo from "./assets/2025Cell.png";
 import android from "./assets/androidCell.png";
+import outubro from "./assets/outubroCell.png";
 
 export default function App() {
+  const [mostraExplicacaoHTML, setMostraExplicacaoHTML] = useState(false);
+  const ativaExplicacaoHTML = () => {
+    setMostraExplicacaoHTML(!mostraExplicacaoHTML);
+  };
+
+  const [mostraExplicacaoCSS, setMostraExplicacaoCSS] = useState(false);
+  const ativaExplicacaoCSS = () => {
+    setMostraExplicacaoCSS(!mostraExplicacaoCSS);
+  };
+
+  const [mostraExplicacaoSASS, setMostraExplicacaoSASS] = useState(false);
+  const ativaExplicacaoSASS = () => {
+    setMostraExplicacaoSASS(!mostraExplicacaoSASS);
+  };
+
+  const [mostraExplicacaoJS, setMostraExplicacaoJS] = useState(false);
+  const ativaExplicacaoJS = () => {
+    setMostraExplicacaoJS(!mostraExplicacaoJS);
+  };
+
+  const [mostraExplicacaoREACT, setMostraExplicacaoREACT] = useState(false);
+  const ativaExplicacaoREACT = () => {
+    setMostraExplicacaoREACT(!mostraExplicacaoREACT);
+  };
+
+  const [mostraExplicacaoPYTHON, setMostraExplicacaoPYTHON] = useState(false);
+  const ativaExplicacaoPYTHON = () => {
+    setMostraExplicacaoPYTHON(!mostraExplicacaoPYTHON);
+  };
+
+  const [mostraExplicacaoJAVA, setMostraExplicacaoJAVA] = useState(false);
+  const ativaExplicacaoJAVA = () => {
+    setMostraExplicacaoJAVA(!mostraExplicacaoJAVA);
+  };
+
   return (
     <>
       <header className="header">
@@ -29,15 +66,23 @@ export default function App() {
           <h1>Alexandre Alves</h1>
           <nav>
             <ul>
-              <li>Início</li>
-              <li>Skills and Softskills</li>
-              <li>Contatos</li>
-              <li>Projetos</li>
+              <li>
+                <a href="#link1">Início</a>
+              </li>
+              <li>
+                <a href="#link2">Skills and Softskills</a>
+              </li>
+              <li>
+                <a href="#link3">Contatos</a>
+              </li>
+              <li>
+                <a href="#link4">Projetos</a>
+              </li>
             </ul>
           </nav>
         </div>
       </header>
-      <main className="main">
+      <main className="main" id="link1">
         <section className="sobre">
           <img
             src={perfil}
@@ -89,17 +134,143 @@ export default function App() {
             </p>
           </div>
         </section>
-        <section className="skillsSoftskills">
+        <section className="skillsSoftskills" id="link2">
           <div className="tecnologias">
             <h3>Tecnologias conhecidas</h3>
             <div>
-              <img src={html} alt="Imagem logo do HTML 5." />
-              <img src={css} alt="Imagem logo do CSS 3." />
-              <img src={sass} alt="Imagem logo do SASS." />
-              <img src={js} alt="Imagem logo do JavaScript." />
-              <img src={react} alt="Imagem logo do React." />
-              <img src={python} alt="Imagem logo do Python." />
-              <img src={java} alt="Imagem logo do Java." />
+              <div className="tecExplicada">
+                <img
+                  src={html}
+                  alt="Imagem logo do HTML 5."
+                  onClick={ativaExplicacaoHTML}
+                />
+                {mostraExplicacaoHTML && (
+                  <div className="explicacao1">
+                    <h2>HTML5</h2>
+                    <p>
+                      O HTML5 (HyperText Markup Language 5) é a versão mais
+                      recente da linguagem de marcação usada para estruturar
+                      páginas da web. Ele trouxe melhorias significativas, como
+                      suporte nativo a vídeos e áudios, novas tags semânticas,
+                      maior integração com CSS e JavaScript, além de melhor
+                      performance e compatibilidade com dispositivos móveis.
+                    </p>
+                  </div>
+                )}
+              </div>
+              <div className="tecExplicada">
+                <img
+                  src={css}
+                  alt="Imagem logo do CSS 3."
+                  onClick={ativaExplicacaoCSS}
+                />
+                {mostraExplicacaoCSS && (
+                  <div className="explicacao1">
+                    <h2>CSS3</h2>
+                    <p>
+                      CSS3 (Cascading Style Sheets 3) é a versão mais recente do
+                      CSS, usada para estilizar páginas da web. Ele introduziu
+                      recursos avançados como gradientes, animações, flexbox,
+                      grid, media queries (para design responsivo) e efeitos
+                      visuais. Também melhorou o desempenho e a compatibilidade
+                      com diferentes dispositivos.
+                    </p>
+                  </div>
+                )}
+              </div>
+              <div className="tecExplicada">
+                <img
+                  src={sass}
+                  alt="Imagem logo do SASS."
+                  onClick={ativaExplicacaoSASS}
+                />
+                {mostraExplicacaoSASS && (
+                  <div className="explicacao1">
+                    <h2>SASS</h2>
+                    <p>
+                      SASS (Syntactically Awesome Stylesheets) é um
+                      pré-processador de CSS que adiciona funcionalidades como
+                      variáveis, aninhamento, mixins e herança, facilitando a
+                      escrita e manutenção do código CSS.
+                    </p>
+                  </div>
+                )}
+              </div>
+              <div className="tecExplicada">
+                <img
+                  src={js}
+                  alt="Imagem logo do JavaScript."
+                  onClick={ativaExplicacaoJS}
+                />
+                {mostraExplicacaoJS && (
+                  <div className="explicacao1">
+                    <h2>JAVASCRIPT</h2>
+                    <p>
+                      JavaScript (JS) é uma linguagem de programação voltada
+                      para o desenvolvimento web. Ele permite criar páginas
+                      interativas, manipulando HTML e CSS dinamicamente.
+                    </p>
+                  </div>
+                )}
+              </div>
+              <div className="tecExplicada">
+                <img
+                  src={react}
+                  alt="Imagem logo do React."
+                  onClick={ativaExplicacaoREACT}
+                />
+                {mostraExplicacaoREACT && (
+                  <div className="explicacao1">
+                    <h2>REACT</h2>
+                    <p>
+                      React é uma biblioteca JavaScript para a criação de
+                      interfaces de usuário interativas e eficientes. Ele
+                      utiliza o conceito de componentes reutilizáveis e um
+                      Virtual DOM para otimizar atualizações na página.
+                    </p>
+                  </div>
+                )}
+              </div>
+              <div className="tecExplicada">
+                <img
+                  src={python}
+                  alt="Imagem logo do Python."
+                  onClick={ativaExplicacaoPYTHON}
+                />
+                {mostraExplicacaoPYTHON && (
+                  <div className="explicacao2">
+                    <h2>PYTHON</h2>
+                    <p>
+                      Python é uma linguagem de programação de alto nível,
+                      conhecida por sua sintaxe simples e legibilidade. É
+                      amplamente utilizada em desenvolvimento web, automação,
+                      análise de dados, inteligência artificial e ciência de
+                      dados, devido à sua vasta comunidade e bibliotecas
+                      poderosas.
+                    </p>
+                  </div>
+                )}
+              </div>
+              <div className="tecExplicada">
+                <img
+                  src={java}
+                  alt="Imagem logo do Java."
+                  onClick={ativaExplicacaoJAVA}
+                />
+                {mostraExplicacaoJAVA && (
+                  <div className="explicacao2">
+                    <h2>JAVA</h2>
+                    <p>
+                      Java é uma linguagem de programação orientada a objetos,
+                      amplamente utilizada no desenvolvimento de aplicações
+                      móveis, web e sistemas corporativos. Sua principal
+                      característica é a portabilidade, permitindo que o código
+                      seja executado em diferentes plataformas sem alterações,
+                      graças à JVM (Java Virtual Machine).
+                    </p>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
           <div className="idiomas">
@@ -126,21 +297,36 @@ export default function App() {
             </ul>
           </div>
         </section>
-        <section>
+        <section id="link3">
           <div className="contatos">
             <h3>Contatos</h3>
             <div>
-              <img src={linkedin} alt="Imagem logo do Linkedin." />
-              <img src={github} alt="Imagem logo do Github." />
-              <img
-                src={email}
-                alt="Imagem logo de uma carta que simboliza o e-mail."
-              />
-              <img src={whats} alt="Imagem logo do Whatsapp." />
+              <a
+                href="https://www.linkedin.com/in/alexandre-alves-27135128a/"
+                target="_blank"
+              >
+                <img src={linkedin} alt="Imagem logo do Linkedin." />
+              </a>
+              <a href="https://github.com/Xande-Alves" target="_blank">
+                <img src={github} alt="Imagem logo do Github." />
+              </a>
+              <a href="mailto:alexandre.upe@gmail.com">
+                <img
+                  src={email}
+                  alt="Imagem logo de uma carta que simboliza o e-mail."
+                />
+              </a>
+              <a
+                href="https://wa.me/5581988974954"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src={whats} alt="Imagem logo do Whatsapp." />
+              </a>
             </div>
           </div>
         </section>
-        <section className="projetos">
+        <section className="projetos" id="link4">
           <h3>Projetos</h3>
           <div className="listaProjetos">
             <div>
@@ -171,11 +357,19 @@ export default function App() {
                 </div>
                 <h4>Links</h4>
                 <div className="projetoLink">
-                  <img src={github} alt="Imagem logo do Github." />
-                  <img
-                    src={nav}
-                    alt="Imagem de um monitor rodando uma aplicação."
-                  />
+                  <a
+                    href="https://github.com/Xande-Alves/Uhuuu"
+                    target="_blank"
+                  >
+                    <img src={github} alt="Imagem logo do Github." />
+                  </a>
+
+                  <a href="https://uhuuu.vercel.app/" target="_blank">
+                    <img
+                      src={nav}
+                      alt="Imagem de um monitor rodando uma aplicação."
+                    />
+                  </a>
                 </div>
               </div>
             </div>
@@ -207,11 +401,15 @@ export default function App() {
                 </div>
                 <h4>Links</h4>
                 <div className="projetoLink">
-                  <img src={github} alt="Imagem logo do Github." />
-                  <img
-                    src={nav}
-                    alt="Imagem de um monitor rodando uma aplicação."
-                  />
+                  <a href="#" target="_blank">
+                    <img src={github} alt="Imagem logo do Github." />
+                  </a>
+                  <a href="#" target="_blank">
+                    <img
+                      src={nav}
+                      alt="Imagem de um monitor rodando uma aplicação."
+                    />
+                  </a>
                 </div>
               </div>
             </div>
@@ -240,7 +438,12 @@ export default function App() {
                 </div>
                 <h4>Links</h4>
                 <div className="projetoLink">
-                  <img src={github} alt="Imagem logo do Github." />
+                  <a
+                    href="https://github.com/Xande-Alves/Cadastro-python"
+                    target="_blank"
+                  >
+                    <img src={github} alt="Imagem logo do Github." />
+                  </a>
                 </div>
               </div>
             </div>
@@ -271,11 +474,21 @@ export default function App() {
                 </div>
                 <h4>Links</h4>
                 <div className="projetoLink">
-                  <img src={github} alt="Imagem logo do Github." />
-                  <img
-                    src={nav}
-                    alt="Imagem de um monitor rodando uma aplicação."
-                  />
+                  <a
+                    href="https://github.com/Xande-Alves/Desafio-Livros-Vai-na-Web"
+                    target="_blank"
+                  >
+                    <img src={github} alt="Imagem logo do Github." />
+                  </a>
+                  <a
+                    href="https://desafio-livros-vai-na-web.vercel.app/"
+                    target="_blank"
+                  >
+                    <img
+                      src={nav}
+                      alt="Imagem de um monitor rodando uma aplicação."
+                    />
+                  </a>
                 </div>
               </div>
             </div>
@@ -286,7 +499,7 @@ export default function App() {
                 alt="Imagem de celular com o site Vai na WebStore."
               />
               <div>
-                <h4>Livros Vai na Web</h4>
+                <h4>Vai na WebStore</h4>
                 <p>
                   A Vai na WebStore é um site que simula uma loja virtual com
                   produtos fictícios. Nele, você pode explorar todos os itens
@@ -305,11 +518,21 @@ export default function App() {
                 </div>
                 <h4>Links</h4>
                 <div className="projetoLink">
-                  <img src={github} alt="Imagem logo do Github." />
-                  <img
-                    src={nav}
-                    alt="Imagem de um monitor rodando uma aplicação."
-                  />
+                  <a
+                    href="https://github.com/Xande-Alves/Vai_na_WebStore"
+                    target="_blank"
+                  >
+                    <img src={github} alt="Imagem logo do Github." />
+                  </a>
+                  <a
+                    href="https://vai-na-web-store.vercel.app/"
+                    target="_blank"
+                  >
+                    <img
+                      src={nav}
+                      alt="Imagem de um monitor rodando uma aplicação."
+                    />
+                  </a>
                 </div>
               </div>
             </div>
@@ -336,11 +559,18 @@ export default function App() {
                 </div>
                 <h4>Links</h4>
                 <div className="projetoLink">
-                  <img src={github} alt="Imagem logo do Github." />
-                  <img
-                    src={nav}
-                    alt="Imagem de um monitor rodando uma aplicação."
-                  />
+                  <a
+                    href="https://github.com/Xande-Alves/Pepsi"
+                    target="_blank"
+                  >
+                    <img src={github} alt="Imagem logo do Github." />
+                  </a>
+                  <a href="https://pepsi-inky.vercel.app/" target="_blank">
+                    <img
+                      src={nav}
+                      alt="Imagem de um monitor rodando uma aplicação."
+                    />
+                  </a>
                 </div>
               </div>
             </div>
@@ -365,11 +595,18 @@ export default function App() {
                 </div>
                 <h4>Links</h4>
                 <div className="projetoLink">
-                  <img src={github} alt="Imagem logo do Github." />
-                  <img
-                    src={nav}
-                    alt="Imagem de um monitor rodando uma aplicação."
-                  />
+                  <a
+                    href="https://github.com/Xande-Alves/Feliz_2025"
+                    target="_blank"
+                  >
+                    <img src={github} alt="Imagem logo do Github." />
+                  </a>
+                  <a href="https://feliz-2025.vercel.app/" target="_blank">
+                    <img
+                      src={nav}
+                      alt="Imagem de um monitor rodando uma aplicação."
+                    />
+                  </a>
                 </div>
               </div>
             </div>
@@ -395,7 +632,12 @@ export default function App() {
                 </div>
                 <h4>Links</h4>
                 <div className="projetoLink">
-                  <img src={github} alt="Imagem logo do Github." />
+                  <a
+                    href="https://github.com/Xande-Alves/Realizando-missoes-VNW"
+                    target="_blank"
+                  >
+                    <img src={github} alt="Imagem logo do Github." />
+                  </a>
                 </div>
               </div>
             </div>
@@ -422,11 +664,61 @@ export default function App() {
                 </div>
                 <h4>Links</h4>
                 <div className="projetoLink">
-                  <img src={github} alt="Imagem logo do Github." />
-                  <img
-                    src={nav}
-                    alt="Imagem de um monitor rodando uma aplicação."
-                  />
+                  <a
+                    href="https://github.com/Xande-Alves/Site-Android"
+                    target="_blank"
+                  >
+                    <img src={github} alt="Imagem logo do Github." />
+                  </a>
+                  <a
+                    href="https://site-android-six.vercel.app/"
+                    target="_blank"
+                  >
+                    <img
+                      src={nav}
+                      alt="Imagem de um monitor rodando uma aplicação."
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div>
+              <img
+                className="imgProjeto"
+                src={outubro}
+                alt="Imagem de celular com o site Outubro Rosa."
+              />
+              <div>
+                <h4>Outubro Rosa</h4>
+                <p>
+                  O site Outubro Rosa foi criado para conscientizar sobre a
+                  importância da prevenção e do diagnóstico precoce do câncer de
+                  mama. Por meio de diversos eventos e iniciativas, a campanha
+                  reúne pessoas engajadas em apoiar a causa e reforçar a
+                  importância do autocuidado. Cuide-se!
+                </p>
+                <h4>Principais tecnologias</h4>
+                <div className="projetoTec">
+                  <img src={html} alt="Imagem logo do HTML 5." />
+                  <img src={css} alt="Imagem logo do CSS 3." />
+                </div>
+                <h4>Links</h4>
+                <div className="projetoLink">
+                  <a
+                    href="https://github.com/Xande-Alves/Outubro-Rosa"
+                    target="_blank"
+                  >
+                    <img src={github} alt="Imagem logo do Github." />
+                  </a>
+                  <a
+                    href="https://outubro-rosa-jet.vercel.app/"
+                    target="_blank"
+                  >
+                    <img
+                      src={nav}
+                      alt="Imagem de um monitor rodando uma aplicação."
+                    />
+                  </a>
                 </div>
               </div>
             </div>
