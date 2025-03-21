@@ -24,10 +24,268 @@ import android from "./assets/androidCell.png";
 import outubro from "./assets/outubroCell.png";
 import githubB from "./assets/githubBranco.png";
 import navB from "./assets/navegadorB.png";
+import navP from "./assets/navegadorP.png";
 import linkedinB from "./assets/linkedinB.png";
 import emailB from "./assets/emailB.png";
 import whatsB from "./assets/whatsappB.png";
 import logo from "./assets/logoT2.png";
+import linkedinP from "./assets/linkedinP.png";
+import githubP from "./assets/githubP.png";
+import emailP from "./assets/emailP.png";
+import whatsP from "./assets/whatsappP.png";
+
+const projetos = [
+  {
+    titulo: "Uhuuu!!!",
+    descricao:
+      "O Uhuuu!!! nasceu com a proposta de conectar pessoas a eventos e estabelecimentos de entretenimento e lazer. Por meio de uma plataforma intuitiva e envolvente, os usuários podem explorar e descobrir eventos alinhados ao seu estado de espírito e objetivos, tornando seus momentos de diversão mais assertivos e memoráveis. Ao mesmo tempo, estabelecimentos e organizadores têm a oportunidade de divulgar seus eventos, ampliando seu alcance e aumentando as chances de sucesso. Com o Uhuuu!!!, todos saem ganhando – mais diversão para quem busca experiências e mais visibilidade para quem as oferece!",
+    imagem: uhuuu,
+    altImagem: "Imagem de celular com o site do Uhuuu!!!.",
+    tecnologias: [
+      { imagem: sass, alt: "Imagem logo do SASS." },
+      { imagem: js, alt: "Imagem logo do JavaScript." },
+      { imagem: react, alt: "Imagem logo do React." },
+    ],
+    links: [
+      {
+        imagem: github,
+        alt: "Imagem logo do Github.",
+        url: "https://github.com/Xande-Alves/Uhuuu",
+      },
+      {
+        imagem: nav,
+        alt: "Imagem de um monitor rodando uma aplicação.",
+        url: "https://uhuuu.vercel.app/",
+      },
+    ],
+  },
+  {
+    titulo: "Livros Vai na Web",
+    descricao:
+      "O Livros Vai na Web é um site dedicado a incentivar a doação de livros que já não são utilizados, contribuindo para a educação de outras pessoas. Com uma interface simples, intuitiva e responsiva, o site foi desenvolvido como parte de um desafio da comunidade Vai na Web.Atualmente, a integração com o banco de dados está em desenvolvimento e em breve estará disponível. Participe você também e ajude a transformar a educação em sua cidade!",
+    imagem: livros,
+    altImagem: "Imagem de celular com o site Livros Vai na Web.",
+    tecnologias: [
+      { imagem: sass, alt: "Imagem logo do SASS." },
+      { imagem: js, alt: "Imagem logo do JavaScript." },
+      { imagem: react, alt: "Imagem logo do React." },
+    ],
+    links: [
+      {
+        imagem: github,
+        alt: "Imagem logo do Github.",
+        url: "https://github.com/Xande-Alves/Desafio-Livros-Vai-na-Web",
+      },
+      {
+        imagem: nav,
+        alt: "Imagem de um monitor rodando uma aplicação.",
+        url: "https://desafio-livros-vai-na-web.vercel.app/",
+      },
+    ],
+  },
+  {
+    titulo: "API Livros Vai na Web",
+    descricao:
+      "A API Livros Vai na Web é a parte de back-end que será integrada ao site Livros Vai na Web, permitindo assim acesso ao banco de dados. Depois de integrada, o usuário poderá cadastrar os livros que quer doar e ainda listar os livros doados. Tudo pela educação!!",
+    imagem: cadastro,
+    altImagem: "Imagem de celular com a logo do Python.",
+    tecnologias: [{ imagem: python, alt: "Imagem logo do Python." }],
+    links: [
+      {
+        imagem: github,
+        alt: "Imagem logo do Github.",
+        url: "https://github.com/Xande-Alves/API_livros",
+      },
+    ],
+  },
+  {
+    titulo: "Portfólio",
+    descricao:
+      "Este é o portfólio onde você se encontra! Resolvi postar aqui também para quem quisesse um link rápido para acessar o Github. Talvez possa inspirar ou servir para tirar alguma dúvida de algum outro desenvolvedor. Estamos juntos!!",
+    imagem: webstore,
+    altImagem: "Imagem de celular com o site do Portfólio de Alexandre Alves.",
+    tecnologias: [
+      { imagem: sass, alt: "Imagem logo do SASS." },
+      { imagem: js, alt: "Imagem logo do JavaScript." },
+      { imagem: react, alt: "Imagem logo do React." },
+    ],
+    links: [
+      {
+        imagem: github,
+        alt: "Imagem logo do Github.",
+        url: "https://github.com/Xande-Alves/Portfolio",
+      },
+    ],
+  },
+  {
+    titulo: "Vai na WebStore",
+    descricao:
+      "A Vai na WebStore é um site que simula uma loja virtual com produtos fictícios. Nele, você pode explorar todos os itens disponíveis ou filtrá-los por categorias para facilitar sua busca. Ao encontrar um produto de interesse, é possível adicioná-lo ou removê-lo da sua lista de compras. No final, você pode revisar os itens selecionados e os detalhes da sua compra na página do carrinho. Venha fazer suas compras na Vai na WebStore!",
+    imagem: webstore,
+    altImagem: "Imagem de celular com o site Vai na WebStore.",
+    tecnologias: [
+      { imagem: sass, alt: "Imagem logo do SASS." },
+      { imagem: js, alt: "Imagem logo do JavaScript." },
+      { imagem: react, alt: "Imagem logo do React." },
+    ],
+    links: [
+      {
+        imagem: github,
+        alt: "Imagem logo do Github.",
+        url: "https://github.com/Xande-Alves/Vai_na_WebStore",
+      },
+      {
+        imagem: nav,
+        alt: "Imagem de um monitor rodando uma aplicação.",
+        url: "https://vai-na-web-store.vercel.app/",
+      },
+    ],
+  },
+  {
+    titulo: "Cadastro de pessoas",
+    descricao:
+      "O projeto de cadastro de pessoas é uma aplicação simples em Python, que permite registrar pessoas com os seguintes atributos: nome, idade, endereço e curso. Os dados são armazenados em uma lista, possibilitando, posteriormente, listar todos os cadastrados ou realizar buscas e filtros com base em qualquer um desses atributos. O projeto foi desenvolvido utilizando o paradigma de programação orientada a objetos, com uma classe Pessoa definida separadamente e instanciada sempre que um novo cadastro é realizado.",
+    imagem: cadastro,
+    altImagem: "Imagem de celular com a logo do Python.",
+    tecnologias: [{ imagem: python, alt: "Imagem logo do Python." }],
+    links: [
+      {
+        imagem: github,
+        alt: "Imagem logo do Github.",
+        url: "https://github.com/Xande-Alves/Cadastro-python",
+      },
+    ],
+  },
+  {
+    titulo: "Pepsi",
+    descricao:
+      "O site da Pepsi é simples, mas visualmente atraente. Com funcionalidades como a troca de cores de plano de fundo, mudança de imagens e deslize de itens, proporciona uma experiência interativa e agradável para o usuário. Que tal criar algo moderno e envolvente para o seu produto também?",
+    imagem: pepsi,
+    altImagem: "Imagem de celular com o site da Pepsi.",
+    tecnologias: [
+      { imagem: sass, alt: "Imagem logo do SASS." },
+      { imagem: js, alt: "Imagem logo do JavaScript." },
+      { imagem: react, alt: "Imagem logo do React." },
+    ],
+    links: [
+      {
+        imagem: github,
+        alt: "Imagem logo do Github.",
+        url: "https://github.com/Xande-Alves/Pepsi",
+      },
+      {
+        imagem: nav,
+        alt: "Imagem de um monitor rodando uma aplicação.",
+        url: "https://pepsi-inky.vercel.app/",
+      },
+    ],
+  },
+  {
+    titulo: "Avant Turismo PE",
+    descricao:
+      "O site da Avant Turismo foi desenvolvido como parte do projeto Desenvolvimento de Comércio Eletrônico para Dispositivos Web Aplicado em Agenciamento Turístico, realizado na Escola Técnica de Pernambuco. Criamos uma plataforma moderna e atraente para a empresa, com o objetivo de conquistar novos clientes e fortalecer o negócio. Durante o processo, implementamos novas funcionalidades, eliminamos recursos obsoletos do antigo site e aprimoramos a experiência do usuário. O resultado? Um site atualizado, eficiente e a plena satisfação do cliente!",
+    imagem: avant,
+    altImagem: "Imagem de celular com site da Avant Turismo.",
+    tecnologias: [
+      { imagem: html, alt: "Imagem logo do HTML 5." },
+      { imagem: css, alt: "Imagem logo do CSS 3." },
+      { imagem: js, alt: "Imagem logo do JavaScript." },
+    ],
+    links: [
+      { imagem: github, alt: "Imagem logo do Github.", url: "#" },
+      {
+        imagem: nav,
+        alt: "Imagem de um monitor rodando uma aplicação.",
+        url: "#",
+      },
+    ],
+  },
+  {
+    titulo: "O código secreto",
+    descricao:
+      "O Código Secreto foi um desafio lançado pela comunidade Vai na Web que, a princípio, era simples. No entanto, dei um passo além e tornei o programa inquebrável, implementando validações e tratamento de erros para lidar com possíveis respostas incorretas fornecidas pelo usuário. Desafio você a quebrá-lo!😉",
+    imagem: cadastro,
+    altImagem: "Imagem de celular com a logo do Python.",
+    tecnologias: [{ imagem: python, alt: "Imagem logo do Python." }],
+    links: [
+      {
+        imagem: github,
+        alt: "Imagem logo do Github.",
+        url: "https://github.com/Xande-Alves/Realizando-missoes-VNW",
+      },
+    ],
+  },
+  {
+    titulo: "Feliz 2025!",
+    descricao:
+      "O site Feliz 2025! foi criado para desejar um feliz ano novo à comunidade de desenvolvedores, com um poema personalizado dedicado à área de tecnologia. Feliz 2025 para você também!",
+    imagem: anoNovo,
+    altImagem: "Imagem de celular com o site do Feliz 2025!",
+    tecnologias: [
+      { imagem: sass, alt: "Imagem logo do SASS." },
+      { imagem: js, alt: "Imagem logo do JavaScript." },
+      { imagem: react, alt: "Imagem logo do React." },
+    ],
+    links: [
+      {
+        imagem: github,
+        alt: "Imagem logo do Github.",
+        url: "https://github.com/Xande-Alves/Feliz_2025",
+      },
+      {
+        imagem: nav,
+        alt: "Imagem de um monitor rodando uma aplicação.",
+        url: "https://feliz-2025.vercel.app/",
+      },
+    ],
+  },
+  {
+    titulo: "Curiosidades Sobre Tecnologia",
+    descricao:
+      "O site Curiosidades sobre tecnologia foi elaborado para trazer, nessa matéria, a história do mascote do sistema operacional Android. Talvez você não saiba que o seu simpático mascote tem um nome e uma história muito curiosa? Pois acompanhe esse artigo para aprender muita coisa sobre esse robozinho.",
+    imagem: android,
+    altImagem: "Imagem de celular com site do Curiosidades Sobre Tecnologia.",
+    tecnologias: [
+      { imagem: html, alt: "Imagem logo do HTML 5." },
+      { imagem: css, alt: "Imagem logo do CSS 3." },
+    ],
+    links: [
+      {
+        imagem: github,
+        alt: "Imagem logo do Github.",
+        url: "https://github.com/Xande-Alves/Site-Android",
+      },
+      {
+        imagem: nav,
+        alt: "Imagem de um monitor rodando uma aplicação.",
+        url: "https://site-android-six.vercel.app/",
+      },
+    ],
+  },
+  {
+    titulo: "Outubro Rosa",
+    descricao:
+      "O site Outubro Rosa foi criado para conscientizar sobre a importância da prevenção e do diagnóstico precoce do câncer de mama. Por meio de diversos eventos e iniciativas, a campanha reúne pessoas engajadas em apoiar a causa e reforçar a importância do autocuidado. Cuide-se!",
+    imagem: outubro,
+    altImagem: "Imagem de celular com site do Outubro Rosa.",
+    tecnologias: [
+      { imagem: html, alt: "Imagem logo do HTML 5." },
+      { imagem: css, alt: "Imagem logo do CSS 3." },
+    ],
+    links: [
+      {
+        imagem: github,
+        alt: "Imagem logo do Github.",
+        url: "https://github.com/Xande-Alves/Outubro-Rosa",
+      },
+      {
+        imagem: nav,
+        alt: "Imagem de um monitor rodando uma aplicação.",
+        url: "https://outubro-rosa-jet.vercel.app/",
+      },
+    ],
+  },
+];
 
 export default function App() {
   //MUDA MODO ESCURO/CLARO
@@ -55,6 +313,12 @@ export default function App() {
   const ativaExplicacao = (tecnologia) => {
     setExplicacaoAtiva(explicacaoAtiva === tecnologia ? null : tecnologia);
   };
+
+  //MUDANÇA DE COR DOS ICONES DOS LINKS DOS PROJETOS
+  const [hoveredImage, setHoveredImage] = useState({});
+
+  //MENU ESCONDIDO EM TELAS MENORES QUEM 500PX
+  
 
   return (
     <>
@@ -329,7 +593,13 @@ export default function App() {
                 <img
                   src={iconeTecLinkedin}
                   alt="Imagem logo do Linkedin."
-                  onMouseEnter={() => setIconeTecLinkedin(linkedinB)}
+                  onMouseEnter={() => {
+                    if (nomeBotao === "Modo Claro") {
+                      setIconeTecLinkedin(linkedinB);
+                    } else {
+                      setIconeTecLinkedin(linkedinP);
+                    }
+                  }}
                   onMouseLeave={() => setIconeTecLinkedin(linkedin)}
                 />
               </a>
@@ -337,7 +607,13 @@ export default function App() {
                 <img
                   src={iconeTecGithub}
                   alt="Imagem logo do Github."
-                  onMouseEnter={() => setIconeTecGithub(githubB)}
+                  onMouseEnter={() => {
+                    if (nomeBotao === "Modo Claro") {
+                      setIconeTecGithub(githubB);
+                    } else {
+                      setIconeTecGithub(githubP);
+                    }
+                  }}
                   onMouseLeave={() => setIconeTecGithub(github)}
                 />
               </a>
@@ -345,7 +621,13 @@ export default function App() {
                 <img
                   src={iconeTecEmail}
                   alt="Imagem logo de uma carta que simboliza o e-mail."
-                  onMouseEnter={() => setIconeTecEmail(emailB)}
+                  onMouseEnter={() => {
+                    if (nomeBotao === "Modo Claro") {
+                      setIconeTecEmail(emailB);
+                    } else {
+                      setIconeTecEmail(emailP);
+                    }
+                  }}
                   onMouseLeave={() => setIconeTecEmail(email)}
                 />
               </a>
@@ -357,7 +639,13 @@ export default function App() {
                 <img
                   src={iconeTecWhatsapp}
                   alt="Imagem logo do Whatsapp."
-                  onMouseEnter={() => setIconeTecWhatsapp(whatsB)}
+                  onMouseEnter={() => {
+                    if (nomeBotao === "Modo Claro") {
+                      setIconeTecWhatsapp(whatsB);
+                    } else {
+                      setIconeTecWhatsapp(whatsP);
+                    }
+                  }}
                   onMouseLeave={() => setIconeTecWhatsapp(whats)}
                 />
               </a>
@@ -367,399 +655,80 @@ export default function App() {
         <section className={`projetos ${isDark ? "dark" : "light"}`} id="link4">
           <h3>Projetos</h3>
           <div className="listaProjetos">
-            <div>
-              <img
-                className="imgProjeto"
-                src={uhuuu}
-                alt="Imagem de celular com o site do Uhuuu!!!."
-              />
-              <div>
-                <h4>Uhuuu!!!</h4>
-                <p>
-                  O Uhuuu!!! nasceu com a proposta de conectar pessoas a eventos
-                  e estabelecimentos de entretenimento e lazer. Por meio de uma
-                  plataforma intuitiva e envolvente, os usuários podem explorar
-                  e descobrir eventos alinhados ao seu estado de espírito e
-                  objetivos, tornando seus momentos de diversão mais assertivos
-                  e memoráveis. Ao mesmo tempo, estabelecimentos e organizadores
-                  têm a oportunidade de divulgar seus eventos, ampliando seu
-                  alcance e aumentando as chances de sucesso. Com o Uhuuu!!!,
-                  todos saem ganhando – mais diversão para quem busca
-                  experiências e mais visibilidade para quem as oferece!
-                </p>
-                <h4>Principais tecnologias</h4>
-                <div className="projetoTec">
-                  <img src={sass} alt="Imagem logo do SASS." />
-                  <img src={js} alt="Imagem logo do JavaScript." />
-                  <img src={react} alt="Imagem logo do React." />
-                </div>
-                <h4>Links</h4>
-                <div className="projetoLink">
-                  <a
-                    href="https://github.com/Xande-Alves/Uhuuu"
-                    target="_blank"
-                  >
-                    <img src={github} alt="Imagem logo do Github." />
-                  </a>
+            {projetos.map((projeto, index) => (
+              <div key={index} className="projeto">
+                <img
+                  src={projeto.imagem}
+                  alt={projeto.altImagem}
+                  className="imgProjeto"
+                />
+                <div>
+                  <h4>{projeto.titulo}</h4>
+                  <p>{projeto.descricao}</p>
 
-                  <a href="https://uhuuu.vercel.app/" target="_blank">
-                    <img
-                      src={nav}
-                      alt="Imagem de um monitor rodando uma aplicação."
-                    />
-                  </a>
+                  <h4>Principais tecnologias</h4>
+                  <div className="projetoTec">
+                    {projeto.tecnologias.map((tec, idx) => (
+                      <img key={idx} src={tec.imagem} alt={tec.alt} />
+                    ))}
+                  </div>
+
+                  <h4>Links</h4>
+                  <div className="projetoLink">
+                    {projeto.links.map((link, linkIdx) => {
+                      const uniqueKey = `${index}-${linkIdx}`; // Chave única para cada link (combinando o índice do projeto e o índice do link)
+                      return (
+                        <a
+                          key={uniqueKey}
+                          href={link.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <img
+                            src={hoveredImage[uniqueKey] || link.imagem} // Usa a imagem de hover ou a original
+                            alt={link.alt}
+                            onMouseEnter={() => {
+                              if (link.imagem === github) {
+                                if (nomeBotao === "Modo Claro") {
+                                  setHoveredImage((prev) => ({
+                                    ...prev,
+                                    [uniqueKey]: githubB,
+                                  }));
+                                } else {
+                                  setHoveredImage((prev) => ({
+                                    ...prev,
+                                    [uniqueKey]: githubP,
+                                  }));
+                                }
+                              } else {
+                                if (nomeBotao === "Modo Claro") {
+                                  setHoveredImage((prev) => ({
+                                    ...prev,
+                                    [uniqueKey]: navB,
+                                  }));
+                                } else {
+                                  setHoveredImage((prev) => ({
+                                    ...prev,
+                                    [uniqueKey]: navP,
+                                  }));
+                                }
+                              }
+                            }}
+                            onMouseLeave={() => {
+                              setHoveredImage((prev) => {
+                                const newState = { ...prev };
+                                delete newState[uniqueKey]; // Remove a imagem de hover para esse link específico
+                                return newState;
+                              });
+                            }}
+                          />
+                        </a>
+                      );
+                    })}
+                  </div>
                 </div>
               </div>
-            </div>
-            <div>
-              <img
-                className="imgProjeto"
-                src={avant}
-                alt="Imagem de celular com o site da Avant Turismo."
-              />
-              <div>
-                <h4>Avant Turismo PE</h4>
-                <p>
-                  O site da Avant Turismo foi desenvolvido como parte do projeto
-                  "Desenvolvimento de Comércio Eletrônico para Dispositivos Web
-                  Aplicado em Agenciamento Turístico", realizado na Escola
-                  Técnica de Pernambuco. Criamos uma plataforma moderna e
-                  atraente para a empresa, com o objetivo de conquistar novos
-                  clientes e fortalecer o negócio. Durante o processo,
-                  implementamos novas funcionalidades, eliminamos recursos
-                  obsoletos do antigo site e aprimoramos a experiência do
-                  usuário. O resultado? Um site atualizado, eficiente e a plena
-                  satisfação do cliente!
-                </p>
-                <h4>Principais tecnologias</h4>
-                <div className="projetoTec">
-                  <img src={html} alt="Imagem logo do HTML 5." />
-                  <img src={css} alt="Imagem logo do CSS 3." />
-                  <img src={js} alt="Imagem logo do JavaScript." />
-                </div>
-                <h4>Links</h4>
-                <div className="projetoLink">
-                  <a href="#" target="_blank">
-                    <img src={github} alt="Imagem logo do Github." />
-                  </a>
-                  <a href="#" target="_blank">
-                    <img
-                      src={nav}
-                      alt="Imagem de um monitor rodando uma aplicação."
-                    />
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div>
-              <img
-                className="imgProjeto"
-                src={cadastro}
-                alt="Imagem de celular com a logo do Python."
-              />
-              <div>
-                <h4>Cadastro de pessoas</h4>
-                <p>
-                  O projeto de cadastro de pessoas é uma aplicação simples em
-                  Python, que permite registrar pessoas com os seguintes
-                  atributos: nome, idade, endereço e curso. Os dados são
-                  armazenados em uma lista, possibilitando, posteriormente,
-                  listar todos os cadastrados ou realizar buscas e filtros com
-                  base em qualquer um desses atributos. O projeto foi
-                  desenvolvido utilizando o paradigma de programação orientada a
-                  objetos, com uma classe Pessoa definida separadamente e
-                  instanciada sempre que um novo cadastro é realizado.
-                </p>
-                <h4>Principais tecnologias</h4>
-                <div className="projetoTec">
-                  <img src={python} alt="Imagem logo do Python." />
-                </div>
-                <h4>Links</h4>
-                <div className="projetoLink">
-                  <a
-                    href="https://github.com/Xande-Alves/Cadastro-python"
-                    target="_blank"
-                  >
-                    <img src={github} alt="Imagem logo do Github." />
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div>
-              <img
-                className="imgProjeto"
-                src={livros}
-                alt="Imagem de celular com o site Livros Vai na Web."
-              />
-              <div>
-                <h4>Livros Vai na Web</h4>
-                <p>
-                  O Livros Vai na Web é um site dedicado a incentivar a doação
-                  de livros que já não são utilizados, contribuindo para a
-                  educação de outras pessoas. Com uma interface simples,
-                  intuitiva e responsiva, o site foi desenvolvido como parte de
-                  um desafio da comunidade Vai na Web.Atualmente, a integração
-                  com o banco de dados está em desenvolvimento e em breve estará
-                  disponível. Participe você também e ajude a transformar a
-                  educação em sua cidade!
-                </p>
-                <h4>Principais tecnologias</h4>
-                <div className="projetoTec">
-                  <img src={sass} alt="Imagem logo do SASS." />
-                  <img src={js} alt="Imagem logo do JavaScript." />
-                  <img src={react} alt="Imagem logo do React." />
-                  <img src={python} alt="Imagem logo do Python." />
-                </div>
-                <h4>Links</h4>
-                <div className="projetoLink">
-                  <a
-                    href="https://github.com/Xande-Alves/Desafio-Livros-Vai-na-Web"
-                    target="_blank"
-                  >
-                    <img src={github} alt="Imagem logo do Github." />
-                  </a>
-                  <a
-                    href="https://desafio-livros-vai-na-web.vercel.app/"
-                    target="_blank"
-                  >
-                    <img
-                      src={nav}
-                      alt="Imagem de um monitor rodando uma aplicação."
-                    />
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div>
-              <img
-                className="imgProjeto"
-                src={webstore}
-                alt="Imagem de celular com o site Vai na WebStore."
-              />
-              <div>
-                <h4>Vai na WebStore</h4>
-                <p>
-                  A Vai na WebStore é um site que simula uma loja virtual com
-                  produtos fictícios. Nele, você pode explorar todos os itens
-                  disponíveis ou filtrá-los por categorias para facilitar sua
-                  busca. Ao encontrar um produto de interesse, é possível
-                  adicioná-lo ou removê-lo da sua lista de compras. No final,
-                  você pode revisar os itens selecionados e os detalhes da sua
-                  compra na página do carrinho. Venha fazer suas compras na Vai
-                  na WebStore!
-                </p>
-                <h4>Principais tecnologias</h4>
-                <div className="projetoTec">
-                  <img src={sass} alt="Imagem logo do SASS." />
-                  <img src={js} alt="Imagem logo do JavaScript." />
-                  <img src={react} alt="Imagem logo do React." />
-                </div>
-                <h4>Links</h4>
-                <div className="projetoLink">
-                  <a
-                    href="https://github.com/Xande-Alves/Vai_na_WebStore"
-                    target="_blank"
-                  >
-                    <img src={github} alt="Imagem logo do Github." />
-                  </a>
-                  <a
-                    href="https://vai-na-web-store.vercel.app/"
-                    target="_blank"
-                  >
-                    <img
-                      src={nav}
-                      alt="Imagem de um monitor rodando uma aplicação."
-                    />
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div>
-              <img
-                className="imgProjeto"
-                src={pepsi}
-                alt="Imagem de celular com o site da Pepsi."
-              />
-              <div>
-                <h4>Pepsi</h4>
-                <p>
-                  O site da Pepsi é simples, mas visualmente atraente. Com
-                  funcionalidades como a troca de cores de plano de fundo,
-                  mudança de imagens e deslize de itens, proporciona uma
-                  experiência interativa e agradável para o usuário. Que tal
-                  criar algo moderno e envolvente para o seu produto também?
-                </p>
-                <h4>Principais tecnologias</h4>
-                <div className="projetoTec">
-                  <img src={sass} alt="Imagem logo do SASS." />
-                  <img src={js} alt="Imagem logo do JavaScript." />
-                  <img src={react} alt="Imagem logo do React." />
-                </div>
-                <h4>Links</h4>
-                <div className="projetoLink">
-                  <a
-                    href="https://github.com/Xande-Alves/Pepsi"
-                    target="_blank"
-                  >
-                    <img src={github} alt="Imagem logo do Github." />
-                  </a>
-                  <a href="https://pepsi-inky.vercel.app/" target="_blank">
-                    <img
-                      src={nav}
-                      alt="Imagem de um monitor rodando uma aplicação."
-                    />
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div>
-              <img
-                className="imgProjeto"
-                src={anoNovo}
-                alt="Imagem de celular com o site do Feliz 2025!"
-              />
-              <div>
-                <h4>Feliz 2025!</h4>
-                <p>
-                  O site Feliz 2025! foi criado para desejar um feliz ano novo à
-                  comunidade de desenvolvedores, com um poema personalizado
-                  dedicado à área de tecnologia. Feliz 2025 para você também!
-                </p>
-                <h4>Principais tecnologias</h4>
-                <div className="projetoTec">
-                  <img src={sass} alt="Imagem logo do SASS." />
-                  <img src={js} alt="Imagem logo do JavaScript." />
-                  <img src={react} alt="Imagem logo do React." />
-                </div>
-                <h4>Links</h4>
-                <div className="projetoLink">
-                  <a
-                    href="https://github.com/Xande-Alves/Feliz_2025"
-                    target="_blank"
-                  >
-                    <img src={github} alt="Imagem logo do Github." />
-                  </a>
-                  <a href="https://feliz-2025.vercel.app/" target="_blank">
-                    <img
-                      src={nav}
-                      alt="Imagem de um monitor rodando uma aplicação."
-                    />
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div>
-              <img
-                className="imgProjeto"
-                src={cadastro}
-                alt="Imagem de celular com a logo do Python."
-              />
-              <div>
-                <h4>O código secreto</h4>
-                <p>
-                  O Código Secreto foi um desafio lançado pela comunidade Vai na
-                  Web que, a princípio, era simples. No entanto, dei um passo
-                  além e tornei o programa inquebrável, implementando validações
-                  e tratamento de erros para lidar com possíveis respostas
-                  incorretas fornecidas pelo usuário. Desafio você a quebrá-lo!
-                  😉
-                </p>
-                <h4>Principais tecnologias</h4>
-                <div className="projetoTec">
-                  <img src={python} alt="Imagem logo do Python." />
-                </div>
-                <h4>Links</h4>
-                <div className="projetoLink">
-                  <a
-                    href="https://github.com/Xande-Alves/Realizando-missoes-VNW"
-                    target="_blank"
-                  >
-                    <img src={github} alt="Imagem logo do Github." />
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div>
-              <img
-                className="imgProjeto"
-                src={android}
-                alt="Imagem de celular com o site Curiosidades sobre tecnologia."
-              />
-              <div>
-                <h4>Curiosidades sobre tecnologia</h4>
-                <p>
-                  O site Curiosidades sobre tecnologia foi elaborado para
-                  trazer, nessa matéria, a história do mascote do sistema
-                  operacional Android. Talvez você não saiba que o seu simpático
-                  mascote tem um nome e uma história muito curiosa? Pois
-                  acompanhe esse artigo para aprender muita coisa sobre esse
-                  robozinho.
-                </p>
-                <h4>Principais tecnologias</h4>
-                <div className="projetoTec">
-                  <img src={html} alt="Imagem logo do HTML 5." />
-                  <img src={css} alt="Imagem logo do CSS 3." />
-                </div>
-                <h4>Links</h4>
-                <div className="projetoLink">
-                  <a
-                    href="https://github.com/Xande-Alves/Site-Android"
-                    target="_blank"
-                  >
-                    <img src={github} alt="Imagem logo do Github." />
-                  </a>
-                  <a
-                    href="https://site-android-six.vercel.app/"
-                    target="_blank"
-                  >
-                    <img
-                      src={nav}
-                      alt="Imagem de um monitor rodando uma aplicação."
-                    />
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div>
-              <img
-                className="imgProjeto"
-                src={outubro}
-                alt="Imagem de celular com o site Outubro Rosa."
-              />
-              <div>
-                <h4>Outubro Rosa</h4>
-                <p>
-                  O site Outubro Rosa foi criado para conscientizar sobre a
-                  importância da prevenção e do diagnóstico precoce do câncer de
-                  mama. Por meio de diversos eventos e iniciativas, a campanha
-                  reúne pessoas engajadas em apoiar a causa e reforçar a
-                  importância do autocuidado. Cuide-se!
-                </p>
-                <h4>Principais tecnologias</h4>
-                <div className="projetoTec">
-                  <img src={html} alt="Imagem logo do HTML 5." />
-                  <img src={css} alt="Imagem logo do CSS 3." />
-                </div>
-                <h4>Links</h4>
-                <div className="projetoLink">
-                  <a
-                    href="https://github.com/Xande-Alves/Outubro-Rosa"
-                    target="_blank"
-                  >
-                    <img src={github} alt="Imagem logo do Github." />
-                  </a>
-                  <a
-                    href="https://outubro-rosa-jet.vercel.app/"
-                    target="_blank"
-                  >
-                    <img
-                      src={nav}
-                      alt="Imagem de um monitor rodando uma aplicação."
-                    />
-                  </a>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </section>
       </main>
