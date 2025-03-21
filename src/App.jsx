@@ -22,68 +22,86 @@ import pepsi from "./assets/pepsiCell.png";
 import anoNovo from "./assets/2025Cell.png";
 import android from "./assets/androidCell.png";
 import outubro from "./assets/outubroCell.png";
+import githubB from "./assets/githubBranco.png";
+import navB from "./assets/navegadorB.png";
+import linkedinB from "./assets/linkedinB.png";
+import emailB from "./assets/emailB.png";
+import whatsB from "./assets/whatsappB.png";
+import logo from "./assets/logoT2.png";
 
 export default function App() {
-  const [mostraExplicacaoHTML, setMostraExplicacaoHTML] = useState(false);
-  const ativaExplicacaoHTML = () => {
-    setMostraExplicacaoHTML(!mostraExplicacaoHTML);
+  //MUDA MODO ESCURO/CLARO
+  const [isDark, setIsDark] = useState(true);
+  const [isDark2, setIsDark2] = useState(true);
+  const [nomeBotao, setNomeBotao] = useState("Modo Claro");
+  const toggleBackground = () => {
+    setIsDark(!isDark);
+    setIsDark2(!isDark2);
+    if (nomeBotao === "Modo Claro") {
+      setNomeBotao("Modo Escuro");
+    } else {
+      setNomeBotao("Modo Claro");
+    }
   };
 
-  const [mostraExplicacaoCSS, setMostraExplicacaoCSS] = useState(false);
-  const ativaExplicacaoCSS = () => {
-    setMostraExplicacaoCSS(!mostraExplicacaoCSS);
-  };
+  //MUDANÇA DE COR DOS ICONES DAS TECNOLOGIAS CONHECIDAS
+  const [iconeTecGithub, setIconeTecGithub] = useState(github);
+  const [iconeTecLinkedin, setIconeTecLinkedin] = useState(linkedin);
+  const [iconeTecEmail, setIconeTecEmail] = useState(email);
+  const [iconeTecWhatsapp, setIconeTecWhatsapp] = useState(whats);
 
-  const [mostraExplicacaoSASS, setMostraExplicacaoSASS] = useState(false);
-  const ativaExplicacaoSASS = () => {
-    setMostraExplicacaoSASS(!mostraExplicacaoSASS);
-  };
-
-  const [mostraExplicacaoJS, setMostraExplicacaoJS] = useState(false);
-  const ativaExplicacaoJS = () => {
-    setMostraExplicacaoJS(!mostraExplicacaoJS);
-  };
-
-  const [mostraExplicacaoREACT, setMostraExplicacaoREACT] = useState(false);
-  const ativaExplicacaoREACT = () => {
-    setMostraExplicacaoREACT(!mostraExplicacaoREACT);
-  };
-
-  const [mostraExplicacaoPYTHON, setMostraExplicacaoPYTHON] = useState(false);
-  const ativaExplicacaoPYTHON = () => {
-    setMostraExplicacaoPYTHON(!mostraExplicacaoPYTHON);
-  };
-
-  const [mostraExplicacaoJAVA, setMostraExplicacaoJAVA] = useState(false);
-  const ativaExplicacaoJAVA = () => {
-    setMostraExplicacaoJAVA(!mostraExplicacaoJAVA);
+  //LOGICA DE EXPLICAÇÃO DAS TECNOLOGIAS CONHECIDAS
+  const [explicacaoAtiva, setExplicacaoAtiva] = useState(null);
+  const ativaExplicacao = (tecnologia) => {
+    setExplicacaoAtiva(explicacaoAtiva === tecnologia ? null : tecnologia);
   };
 
   return (
     <>
-      <header className="header">
-        <div>
-          <h1>Alexandre Alves</h1>
-          <nav>
-            <ul>
-              <li>
-                <a href="#link1">Início</a>
-              </li>
-              <li>
-                <a href="#link2">Skills and Softskills</a>
-              </li>
-              <li>
-                <a href="#link3">Contatos</a>
-              </li>
-              <li>
-                <a href="#link4">Projetos</a>
-              </li>
-            </ul>
-          </nav>
+      <header className={`header ${isDark ? "dark" : "light"}`}>
+        <div className="divHeader">
+          <div className="alexandre">
+            <h1>Alexandre Alves</h1>
+            <h2>Desenvolvedor Full Stack</h2>
+          </div>
+          <div className="divNavModo">
+            <nav>
+              <ul>
+                <li>
+                  <a href="#link1" className={`${isDark ? "dark" : "light"}`}>
+                    Início
+                  </a>
+                </li>
+                <li>
+                  <a href="#link2" className={`${isDark ? "dark" : "light"}`}>
+                    Skills and Softskills
+                  </a>
+                </li>
+                <li>
+                  <a href="#link3" className={`${isDark ? "dark" : "light"}`}>
+                    Contatos
+                  </a>
+                </li>
+                <li>
+                  <a href="#link4" className={`${isDark ? "dark" : "light"}`}>
+                    Projetos
+                  </a>
+                </li>
+              </ul>
+            </nav>
+            <div className="modo">
+              <button
+                className={`${isDark ? "light" : "dark"}`}
+                onClick={toggleBackground}
+              >
+                {nomeBotao}
+              </button>
+            </div>
+          </div>
         </div>
       </header>
       <main className="main" id="link1">
-        <section className="sobre">
+        <section className={`sobre ${isDark2 ? "dark2" : "light2"}`}>
           <img
             src={perfil}
             alt="Foto do desenvolvedor Alexandre Alves, sorrindo, descontraído e de óculos escuros."
@@ -134,7 +152,10 @@ export default function App() {
             </p>
           </div>
         </section>
-        <section className="skillsSoftskills" id="link2">
+        <section
+          className={`skillsSoftskills ${isDark ? "dark" : "light"}`}
+          id="link2"
+        >
           <div className="tecnologias">
             <h3>Tecnologias conhecidas</h3>
             <div>
@@ -142,9 +163,9 @@ export default function App() {
                 <img
                   src={html}
                   alt="Imagem logo do HTML 5."
-                  onClick={ativaExplicacaoHTML}
+                  onClick={() => ativaExplicacao("HTML")}
                 />
-                {mostraExplicacaoHTML && (
+                {explicacaoAtiva === "HTML" && (
                   <div className="explicacao1">
                     <h2>HTML5</h2>
                     <p>
@@ -162,9 +183,9 @@ export default function App() {
                 <img
                   src={css}
                   alt="Imagem logo do CSS 3."
-                  onClick={ativaExplicacaoCSS}
+                  onClick={() => ativaExplicacao("CSS")}
                 />
-                {mostraExplicacaoCSS && (
+                {explicacaoAtiva === "CSS" && (
                   <div className="explicacao1">
                     <h2>CSS3</h2>
                     <p>
@@ -182,9 +203,9 @@ export default function App() {
                 <img
                   src={sass}
                   alt="Imagem logo do SASS."
-                  onClick={ativaExplicacaoSASS}
+                  onClick={() => ativaExplicacao("SASS")}
                 />
-                {mostraExplicacaoSASS && (
+                {explicacaoAtiva === "SASS" && (
                   <div className="explicacao1">
                     <h2>SASS</h2>
                     <p>
@@ -200,9 +221,9 @@ export default function App() {
                 <img
                   src={js}
                   alt="Imagem logo do JavaScript."
-                  onClick={ativaExplicacaoJS}
+                  onClick={() => ativaExplicacao("JS")}
                 />
-                {mostraExplicacaoJS && (
+                {explicacaoAtiva === "JS" && (
                   <div className="explicacao1">
                     <h2>JAVASCRIPT</h2>
                     <p>
@@ -217,9 +238,9 @@ export default function App() {
                 <img
                   src={react}
                   alt="Imagem logo do React."
-                  onClick={ativaExplicacaoREACT}
+                  onClick={() => ativaExplicacao("REACT")}
                 />
-                {mostraExplicacaoREACT && (
+                {explicacaoAtiva === "REACT" && (
                   <div className="explicacao1">
                     <h2>REACT</h2>
                     <p>
@@ -235,9 +256,9 @@ export default function App() {
                 <img
                   src={python}
                   alt="Imagem logo do Python."
-                  onClick={ativaExplicacaoPYTHON}
+                  onClick={() => ativaExplicacao("PYTHON")}
                 />
-                {mostraExplicacaoPYTHON && (
+                {explicacaoAtiva === "PYTHON" && (
                   <div className="explicacao2">
                     <h2>PYTHON</h2>
                     <p>
@@ -255,9 +276,9 @@ export default function App() {
                 <img
                   src={java}
                   alt="Imagem logo do Java."
-                  onClick={ativaExplicacaoJAVA}
+                  onClick={() => ativaExplicacao("JAVA")}
                 />
-                {mostraExplicacaoJAVA && (
+                {explicacaoAtiva === "JAVA" && (
                   <div className="explicacao2">
                     <h2>JAVA</h2>
                     <p>
@@ -298,22 +319,34 @@ export default function App() {
           </div>
         </section>
         <section id="link3">
-          <div className="contatos">
+          <div className={`contatos ${isDark2 ? "dark2" : "light2"}`}>
             <h3>Contatos</h3>
             <div>
               <a
                 href="https://www.linkedin.com/in/alexandre-alves-27135128a/"
                 target="_blank"
               >
-                <img src={linkedin} alt="Imagem logo do Linkedin." />
+                <img
+                  src={iconeTecLinkedin}
+                  alt="Imagem logo do Linkedin."
+                  onMouseEnter={() => setIconeTecLinkedin(linkedinB)}
+                  onMouseLeave={() => setIconeTecLinkedin(linkedin)}
+                />
               </a>
               <a href="https://github.com/Xande-Alves" target="_blank">
-                <img src={github} alt="Imagem logo do Github." />
+                <img
+                  src={iconeTecGithub}
+                  alt="Imagem logo do Github."
+                  onMouseEnter={() => setIconeTecGithub(githubB)}
+                  onMouseLeave={() => setIconeTecGithub(github)}
+                />
               </a>
               <a href="mailto:alexandre.upe@gmail.com">
                 <img
-                  src={email}
+                  src={iconeTecEmail}
                   alt="Imagem logo de uma carta que simboliza o e-mail."
+                  onMouseEnter={() => setIconeTecEmail(emailB)}
+                  onMouseLeave={() => setIconeTecEmail(email)}
                 />
               </a>
               <a
@@ -321,12 +354,17 @@ export default function App() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src={whats} alt="Imagem logo do Whatsapp." />
+                <img
+                  src={iconeTecWhatsapp}
+                  alt="Imagem logo do Whatsapp."
+                  onMouseEnter={() => setIconeTecWhatsapp(whatsB)}
+                  onMouseLeave={() => setIconeTecWhatsapp(whats)}
+                />
               </a>
             </div>
           </div>
         </section>
-        <section className="projetos" id="link4">
+        <section className={`projetos ${isDark ? "dark" : "light"}`} id="link4">
           <h3>Projetos</h3>
           <div className="listaProjetos">
             <div>
@@ -725,6 +763,15 @@ export default function App() {
           </div>
         </section>
       </main>
+      <footer className={`footer ${isDark2 ? "dark2" : "light2"}`}>
+        <div>
+          <img
+            src={logo}
+            alt="Logo do desenvolvedor Alexandre Alves, um A circunscrito em uma espécie de yin yang."
+          />
+          <p>Copyright © 2025 by Alexandre Alves. All rights reserved.</p>
+        </div>
+      </footer>
     </>
   );
 }
