@@ -17,6 +17,7 @@ import nav from "./assets/navegador.png";
 import avant from "./assets/avantCell.png";
 import cadastro from "./assets/pythonCell.png";
 import livros from "./assets/livrosCell.png";
+import portfolio from "./assets/portfolioCell.png";
 import webstore from "./assets/webstoreCell.png";
 import pepsi from "./assets/pepsiCell.png";
 import anoNovo from "./assets/2025Cell.png";
@@ -102,7 +103,7 @@ const projetos = [
     titulo: "Portfólio",
     descricao:
       "Este é o portfólio onde você se encontra! Resolvi postar aqui também para quem quisesse um link rápido para acessar o Github. Talvez possa inspirar ou servir para tirar alguma dúvida de algum outro desenvolvedor. Estamos juntos!!",
-    imagem: webstore,
+    imagem: portfolio,
     altImagem: "Imagem de celular com o site do Portfólio de Alexandre Alves.",
     tecnologias: [
       { imagem: sass, alt: "Imagem logo do SASS." },

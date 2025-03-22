@@ -513,7 +513,7 @@ html {
 //RESPONSIVIDADE
 @media (max-width: 500px) {
   .header {
-    height: auto;
+    height: 100px;
     padding: 12px 0 12px 0;
 
     .divHeader {
@@ -522,12 +522,14 @@ html {
       position: relative;
 
       .alexandre {
+        margin-left: 10px;
+        
         h1 {
-          font-size: 2.5em;
+          font-size: 2em;
         }
 
         h2 {
-          font-size: 1.5em;
+          font-size: 1em;
         }
       }
 
@@ -538,10 +540,6 @@ html {
 
       .divNavModo {
         display: none; // Esconde por padrão
-
-        // &.open {
-        //   display: block; // Mostra quando o menu está aberto
-        // }
       }
 
       .divNavModoMobile {
