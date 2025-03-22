@@ -1,5 +1,5 @@
 import "./app.scss";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import perfil from "./assets/perfil.png";
 import html from "./assets/html5.svg";
 import sass from "./assets/sass.png";
@@ -310,15 +310,59 @@ export default function App() {
 
   //LOGICA DE EXPLICAÇÃO DAS TECNOLOGIAS CONHECIDAS
   const [explicacaoAtiva, setExplicacaoAtiva] = useState(null);
+  const explicacaoRef = useRef(null);
+
   const ativaExplicacao = (tecnologia) => {
     setExplicacaoAtiva(explicacaoAtiva === tecnologia ? null : tecnologia);
   };
+  // Adiciona o evento de clique para fechar a explicação quando clicar fora
+  useEffect(() => {
+    const handleClickFora = (event) => {
+      if (
+        explicacaoRef.current &&
+        !explicacaoRef.current.contains(event.target)
+      ) {
+        setExplicacaoAtiva(null);
+      }
+    };
+
+    document.addEventListener("click", handleClickFora);
+
+    return () => {
+      document.removeEventListener("click", handleClickFora);
+    };
+  }, []);
 
   //MUDANÇA DE COR DOS ICONES DOS LINKS DOS PROJETOS
   const [hoveredImage, setHoveredImage] = useState({});
 
-  //MENU ESCONDIDO EM TELAS MENORES QUEM 500PX
-  
+  //MENU ESCONDIDO EM TELAS MENORES QUE 500PX
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 500);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef(null);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 500);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setMenuOpen(false);
+      }
+    };
+
+    if (menuOpen) {
+      document.addEventListener("click", handleClickOutside);
+    } else {
+      document.removeEventListener("click", handleClickOutside);
+    }
+
+    return () => document.removeEventListener("click", handleClickOutside);
+  }, [menuOpen]);
+
 
   return (
     <>
@@ -362,6 +406,67 @@ export default function App() {
               </button>
             </div>
           </div>
+          {isMobile && (
+            <>
+              <button
+                className="menu-button"
+                onClick={(e) => {
+                  e.stopPropagation(); // Evita que o clique no botão feche o menu
+                  setMenuOpen(!menuOpen);
+                }}
+              >
+                ☰ Menu
+              </button>
+              {menuOpen && (
+                <div className="divNavModoMobile" ref={menuRef}>
+                  <nav>
+                    <ul>
+                      <li>
+                        <a
+                          href="#link1"
+                          className={`${isDark ? "dark" : "light"}`}
+                        >
+                          Início
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#link2"
+                          className={`${isDark ? "dark" : "light"}`}
+                        >
+                          Skills and Softskills
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#link3"
+                          className={`${isDark ? "dark" : "light"}`}
+                        >
+                          Contatos
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#link4"
+                          className={`${isDark ? "dark" : "light"}`}
+                        >
+                          Projetos
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                  <div className="modo">
+                    <button
+                      className={`${isDark ? "light" : "dark"}`}
+                      onClick={toggleBackground}
+                    >
+                      {nomeBotao}
+                    </button>
+                  </div>
+                </div>
+              )}
+            </>
+          )}
         </div>
       </header>
       <main className="main" id="link1">
@@ -422,12 +527,15 @@ export default function App() {
         >
           <div className="tecnologias">
             <h3>Tecnologias conhecidas</h3>
-            <div>
+            <div ref={explicacaoRef}>
               <div className="tecExplicada">
                 <img
                   src={html}
                   alt="Imagem logo do HTML 5."
-                  onClick={() => ativaExplicacao("HTML")}
+                  onClick={(e) => {
+                    e.stopPropagation(); // Evita que o clique no próprio item feche a explicação
+                    ativaExplicacao("HTML");
+                  }}
                 />
                 {explicacaoAtiva === "HTML" && (
                   <div className="explicacao1">

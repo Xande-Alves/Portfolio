@@ -95,6 +95,17 @@ html {
       }
     }
 
+    .menu-button {
+      background-color: #dc2814;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 5px;
+      display: none;
+    }
+
     .divNavModo {
       width: 50%;
       height: 100%;
@@ -499,19 +510,18 @@ html {
   color: white;
 }
 
-
 //RESPONSIVIDADE
-@media (max-width:500px) {
+@media (max-width: 500px) {
   .header {
     height: auto;
+    padding: 12px 0 12px 0;
 
     .divHeader {
       height: 100%;
       width: 100%;
+      position: relative;
 
       .alexandre {
-        border: solid white;
-
         h1 {
           font-size: 2.5em;
         }
@@ -519,12 +529,108 @@ html {
         h2 {
           font-size: 1.5em;
         }
+      }
 
+      .menu-button {
+        display: block; // Mostra só em telas pequenas
+        margin-right: 10px;
       }
 
       .divNavModo {
-        display: none;
+        display: none; // Esconde por padrão
+
+        // &.open {
+        //   display: block; // Mostra quando o menu está aberto
+        // }
+      }
+
+      .divNavModoMobile {
+        position: absolute;
+        top: 87px;
+        left: 220px;
+        background-color: #dc2814;
+        font-size: 1.7em;
+        text-align: right;
+        padding-right: 10px;
+        padding-bottom: 10px;
+        width: 170px;
+        border-radius: 0 0 0 10px;
+
+        li {
+          margin-bottom: 10px;
+          a {
+            background-color: #dc2814;
+          }
+        }
+      }
+    }
+  }
+
+  .main {
+    .sobre {
+      flex-direction: column;
+
+      img {
+        width: 300px;
+        height: 300px;
+        margin-top: 10px;
+      }
+
+      div {
+        width: 100%;
+        padding: 0 5px 0 5px;
+      }
+    }
+
+    .skillsSoftskills {
+      .tecnologias {
+        div {
+          display: flex;
+          flex-wrap: wrap;
+
+          img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 10px;
+          }
+
+          .tecExplicada {
+            .explicacao1 {
+              z-index: 10;
+              width: 370px;
+              margin-left: 10px;
+              position: fixed;
+              left: 0;
+              border-radius: 15px 15px 15px 15px;
+            }
+
+            .explicacao2 {
+              z-index: 10;
+              width: 370px;
+              margin-left: 10px;
+              position: fixed;
+              left: 0;
+              border-radius: 15px 15px 15px 15px;
+            }
+          }
+        }
+      }
+    }
+
+    .projetos {
+      .listaProjetos {
+        .projeto {
+          width: 100%;
+          flex-direction: column;
+
+          .imgProjeto {
+            width: 100px;
+            height: 178px;
+          }
+        }
       }
     }
   }
 }
+
+
