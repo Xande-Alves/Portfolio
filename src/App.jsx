@@ -363,6 +363,13 @@ export default function App() {
     return () => document.removeEventListener("click", handleClickOutside);
   }, [menuOpen]);
 
+  //RENDERIZAÇÃO DOS PROJETOS EM TELAS MENORES QUE 500PX
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 500);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
 
   return (
     <>
@@ -833,6 +840,79 @@ export default function App() {
                         </a>
                       );
                     })}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="listaProjetosMobile">
+            {projetos.map((projeto, index) => (
+              <div key={index} className="projeto">
+                <div className="tituloDesc">
+                  <h4>{projeto.titulo}</h4>
+                  <p>{projeto.descricao}</p>
+                </div>
+                <div className="imgInfos">
+                  <div className="imgMobile">
+                    <img
+                      src={projeto.imagem}
+                      alt={projeto.altImagem}
+                      className="imgProjeto"
+                    />
+                  </div>
+
+                  <div className="infos">
+                    <h4>Principais tecnologias</h4>
+                    <div className="projetoTec">
+                      {projeto.tecnologias.map((tec, idx) => (
+                        <img key={idx} src={tec.imagem} alt={tec.alt} />
+                      ))}
+                    </div>
+
+                    <h4>Links</h4>
+                    <div className="projetoLink">
+                      {projeto.links.map((link, linkIdx) => {
+                        const uniqueKey = `${index}-${linkIdx}`;
+
+                        return (
+                          <a
+                            key={uniqueKey}
+                            href={link.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <img
+                              src={hoveredImage[uniqueKey] || link.imagem}
+                              alt={link.alt}
+                              onMouseEnter={() => {
+                                if (link.imagem === github) {
+                                  setHoveredImage((prev) => ({
+                                    ...prev,
+                                    [uniqueKey]:
+                                      nomeBotao === "Modo Claro"
+                                        ? githubB
+                                        : githubP,
+                                  }));
+                                } else {
+                                  setHoveredImage((prev) => ({
+                                    ...prev,
+                                    [uniqueKey]:
+                                      nomeBotao === "Modo Claro" ? navB : navP,
+                                  }));
+                                }
+                              }}
+                              onMouseLeave={() => {
+                                setHoveredImage((prev) => {
+                                  const newState = { ...prev };
+                                  delete newState[uniqueKey];
+                                  return newState;
+                                });
+                              }}
+                            />
+                          </a>
+                        );
+                      })}
+                    </div>
                   </div>
                 </div>
               </div>
