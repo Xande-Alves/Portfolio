@@ -515,6 +515,194 @@ html {
 }
 
 //RESPONSIVIDADE
+
+@media (max-width: 800px) {
+  .header {
+    .divHeader {
+      position: relative;
+
+      .menu-button {
+        display: block;
+      }
+
+      .divNavModo {
+        display: none;
+      }
+
+      .divNavModoMobile {
+        position: absolute;
+        top: 95px;
+        left: 527px;
+        background-color: #dc2814;
+        font-size: 1.7em;
+        text-align: right;
+        padding-right: 10px;
+        padding-bottom: 10px;
+        width: 170px;
+        border-radius: 0 0 0 10px;
+
+        li {
+          margin-bottom: 10px;
+          a {
+            background-color: #dc2814;
+          }
+        }
+      }
+    }
+  }
+
+  .main {
+    .sobre {
+      flex-direction: column;
+
+      img {
+        width: 300px;
+        height: 300px;
+        margin-top: 10px;
+      }
+
+      div {
+        width: 100%;
+        padding: 0 5px 0 5px;
+      }
+    }
+
+    .skillsSoftskills {
+      .tecnologias {
+        div {
+          display: flex;
+          flex-wrap: wrap;
+
+          img {
+            width: 80px;
+            height: 80px;
+            margin: 0 5px 10px 5px;
+          }
+
+          .tecExplicada {
+            .explicacao1 {
+              z-index: 10;
+              width: 370px;
+              margin-left: 10px;
+              position: fixed;
+              left: 0;
+              border-radius: 15px 15px 15px 15px;
+            }
+
+            .explicacao2 {
+              z-index: 10;
+              width: 370px;
+              margin-left: 10px;
+              position: fixed;
+              left: 0;
+              border-radius: 15px 15px 15px 15px;
+            }
+          }
+        }
+      }
+    }
+
+    .projetos {
+      .listaProjetos {
+        display: none;
+      }
+
+      .listaProjetosMobile {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        margin-top: -30px;
+
+        .projeto {
+          display: flex;
+          flex-direction: column;
+          padding: 0 5px 0 5px;
+          width: 50%;
+          justify-content: space-between;
+
+          .tituloDesc {
+            display: flex;
+            flex-direction: column;
+
+            h4 {
+              color: #dc2814;
+              font-size: 1.5em;
+              margin-bottom: 20px;
+              text-align: center;
+            }
+
+            p {
+              text-align: justify;
+              margin: 0 5px 15px 5px;
+            }
+          }
+
+          .imgInfos {
+            display: flex;
+
+            h4 {
+              color: #dc2814;
+              font-size: 1.5em;
+              margin-bottom: 20px;
+              text-align: center;
+            }
+
+            .imgMobile {
+              img {
+                width: 150px;
+                height: 267px;
+              }
+            }
+
+            .infos {
+              display: flex;
+              flex-direction: column;
+
+              .projetoTec {
+                display: flex;
+                width: 100%;
+                justify-content: space-around;
+                margin-bottom: 50px;
+
+                img {
+                  width: 50px;
+                }
+              }
+
+              .projetoLink {
+                display: flex;
+                width: 100%;
+                justify-content: space-around;
+                margin-bottom: 80px;
+
+                img {
+                  width: 50px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .footer {
+    div {
+      width: 80%;
+      justify-content: space-between;
+
+      img {
+        width: 70px;
+      }
+
+      p {
+        font-size: 0.7em;
+        text-align: center;
+      }
+    }
+  }
+}
+
 @media (max-width: 500px) {
   .header {
     height: 100px;
@@ -527,7 +715,7 @@ html {
 
       .alexandre {
         margin-left: 10px;
-        
+
         h1 {
           font-size: 2em;
         }
@@ -593,7 +781,7 @@ html {
           img {
             width: 80px;
             height: 80px;
-            margin:0 5px 10px 5px;
+            margin: 0 5px 10px 5px;
           }
 
           .tecExplicada {
@@ -634,6 +822,7 @@ html {
           display: flex;
           flex-direction: column;
           padding: 0 5px 0 5px;
+          width: 100%;
 
           .tituloDesc {
             display: flex;
@@ -717,4 +906,3 @@ html {
     }
   }
 }
-
