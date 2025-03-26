@@ -337,7 +337,7 @@ export default function App() {
   //MUDANÇA DE COR DOS ICONES DOS LINKS DOS PROJETOS
   const [hoveredImage, setHoveredImage] = useState({});
 
-  //MENU ESCONDIDO EM TELAS MENORES QUE 500PX
+  //MENU ESCONDIDO EM TELAS MENORES QUE 800PX
   const [isMobile, setIsMobile] = useState(window.innerWidth < 800);
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef(null);
