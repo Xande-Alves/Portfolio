@@ -364,9 +364,9 @@ export default function App() {
     return () => document.removeEventListener('click', handleClickOutside);
   }, [menuOpen]);
 
-  //RENDERIZAÇÃO DOS PROJETOS EM TELAS MENORES QUE 500PX
+  //RENDERIZAÇÃO DOS PROJETOS EM TELAS MENORES QUE 800PX
   useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 500);
+    const handleResize = () => setIsMobile(window.innerWidth < 800);
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
