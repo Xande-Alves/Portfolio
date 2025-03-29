@@ -193,11 +193,11 @@ const projetos = [
       { imagem: js, alt: 'Imagem logo do JavaScript.' },
     ],
     links: [
-      { imagem: github, alt: 'Imagem logo do Github.', url: '#' },
+      { imagem: github, alt: 'Imagem logo do Github.', url: 'https://github.com/Xande-Alves/Avant_Turismo' },
       {
         imagem: nav,
         alt: 'Imagem de um monitor rodando uma aplicação.',
-        url: '#',
+        url: 'https://avant-turismo.vercel.app/',
       },
     ],
   },
