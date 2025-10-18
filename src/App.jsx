@@ -13,8 +13,11 @@ import github from './assets/github.png';
 import email from './assets/email2.png';
 import whats from './assets/whatsapp.png';
 import uhuuu from './assets/uhuuuCell.png';
+import inboxai from './assets/inboxai.png';
 import nav from './assets/navegador.png';
 import avant from './assets/avantCell.png';
+import cybersec1 from './assets/cybersec.png';
+import javacell from './assets/javacell.png';
 import cadastro from './assets/pythonCell.png';
 import livros from './assets/livrosCell.png';
 import portfolio from './assets/portfolioCell.png';
@@ -57,6 +60,31 @@ const projetos = [
         imagem: nav,
         alt: 'Imagem de um monitor rodando uma aplicação.',
         url: 'https://uhuuu.vercel.app/',
+      },
+    ],
+  },
+  {
+    titulo: 'InboxAI',
+    descricao:
+      'Um classificador de e-mails para uma empresa fictícia do setor financeiro chamada CAPITAL. A solução utiliza conexão com a OpenAI e se essa conexão falhar de alguma forma, entra no modelo local de respostas. Todas as instruções para poder rodar localmente, utilizando a API key da OpenAI, está no README. No link direto está utilizando o modelo de IA local.',
+    imagem: inboxai,
+    altImagem: 'Imagem de celular com o site do InboxAI.',
+    tecnologias: [
+      { imagem: html, alt: 'Imagem logo do HTML.' },
+      { imagem: css, alt: 'Imagem logo do CSS.' },
+      { imagem: js, alt: 'Imagem logo do JavaScript.' },
+      { imagem: python, alt: 'Imagem logo do Python.' }
+    ],
+    links: [
+      {
+        imagem: github,
+        alt: 'Imagem logo do Github.',
+        url: 'https://github.com/Xande-Alves/InboxAI',
+      },
+      {
+        imagem: nav,
+        alt: 'Imagem de um monitor rodando uma aplicação.',
+        url: 'https://inboxai-h0vw.onrender.com/',
       },
     ],
   },
@@ -143,6 +171,60 @@ const projetos = [
     ],
   },
   {
+    titulo: 'Avant Turismo PE',
+    descricao:
+      'O site da Avant Turismo foi desenvolvido como parte do projeto Desenvolvimento de Comércio Eletrônico para Dispositivos Web Aplicado em Agenciamento Turístico, realizado na Escola Técnica de Pernambuco. Criamos uma plataforma moderna e atraente para a empresa, com o objetivo de conquistar novos clientes e fortalecer o negócio. Durante o processo, implementamos novas funcionalidades, eliminamos recursos obsoletos do antigo site e aprimoramos a experiência do usuário. O resultado? Um site atualizado, eficiente e a plena satisfação do cliente!',
+    imagem: avant,
+    altImagem: 'Imagem de celular com site da Avant Turismo.',
+    tecnologias: [
+      { imagem: html, alt: 'Imagem logo do HTML 5.' },
+      { imagem: css, alt: 'Imagem logo do CSS 3.' },
+      { imagem: js, alt: 'Imagem logo do JavaScript.' },
+    ],
+    links: [
+      { imagem: github, alt: 'Imagem logo do Github.', url: 'https://github.com/Xande-Alves/Avant_Turismo' },
+      {
+        imagem: nav,
+        alt: 'Imagem de um monitor rodando uma aplicação.',
+        url: 'https://avant-turismo.vercel.app/',
+      },
+    ],
+  },
+  {
+    titulo: 'API em Java',
+    descricao:
+      'API em Java, springboot, conexão mysql e swagger. Atentar para mudar usuário e senha do MySql no aplication.properties, se for rodar localmente.',
+    imagem: javacell,
+    altImagem: 'Imagem de celular com a logo do Java.',
+    tecnologias: [
+      { imagem: java, alt: 'Imagem logo do Java.' }
+    ],
+    links: [
+      {
+        imagem: github,
+        alt: 'Imagem logo do Github.',
+        url: 'https://github.com/Xande-Alves/API_JAVA',
+      },
+    ],
+  },
+  {
+    titulo: 'Relatório de Cibersegurança 1',
+    descricao:
+      'Relatório do curso de Formação em Cibersegurança Kensei/Vai na Web - Módulo 1',
+    imagem: cybersec1,
+    altImagem: 'Imagem de celular com o um cadeado cybernético.',
+    tecnologias: [
+      
+    ],
+    links: [
+      {
+        imagem: github,
+        alt: 'Imagem logo do Github.',
+        url: 'https://github.com/Xande-Alves/Relatorio_Cybersecurity_M1',
+      }
+    ],
+  },
+  {
     titulo: 'Cadastro de pessoas',
     descricao:
       'O projeto de cadastro de pessoas é uma aplicação simples em Python, que permite registrar pessoas com os seguintes atributos: nome, idade, endereço e curso. Os dados são armazenados em uma lista, possibilitando, posteriormente, listar todos os cadastrados ou realizar buscas e filtros com base em qualquer um desses atributos. O projeto foi desenvolvido utilizando o paradigma de programação orientada a objetos, com uma classe Pessoa definida separadamente e instanciada sempre que um novo cadastro é realizado.',
@@ -178,26 +260,6 @@ const projetos = [
         imagem: nav,
         alt: 'Imagem de um monitor rodando uma aplicação.',
         url: 'https://pepsi-inky.vercel.app/',
-      },
-    ],
-  },
-  {
-    titulo: 'Avant Turismo PE',
-    descricao:
-      'O site da Avant Turismo foi desenvolvido como parte do projeto Desenvolvimento de Comércio Eletrônico para Dispositivos Web Aplicado em Agenciamento Turístico, realizado na Escola Técnica de Pernambuco. Criamos uma plataforma moderna e atraente para a empresa, com o objetivo de conquistar novos clientes e fortalecer o negócio. Durante o processo, implementamos novas funcionalidades, eliminamos recursos obsoletos do antigo site e aprimoramos a experiência do usuário. O resultado? Um site atualizado, eficiente e a plena satisfação do cliente!',
-    imagem: avant,
-    altImagem: 'Imagem de celular com site da Avant Turismo.',
-    tecnologias: [
-      { imagem: html, alt: 'Imagem logo do HTML 5.' },
-      { imagem: css, alt: 'Imagem logo do CSS 3.' },
-      { imagem: js, alt: 'Imagem logo do JavaScript.' },
-    ],
-    links: [
-      { imagem: github, alt: 'Imagem logo do Github.', url: 'https://github.com/Xande-Alves/Avant_Turismo' },
-      {
-        imagem: nav,
-        alt: 'Imagem de um monitor rodando uma aplicação.',
-        url: 'https://avant-turismo.vercel.app/',
       },
     ],
   },
