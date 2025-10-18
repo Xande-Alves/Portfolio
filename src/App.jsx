@@ -13,7 +13,7 @@ import github from './assets/github.png';
 import email from './assets/email2.png';
 import whats from './assets/whatsapp.png';
 import uhuuu from './assets/uhuuuCell.png';
-import inboxai from './assets/inboxai.png';
+import inboxai from './assets/InboxAI.png';
 import nav from './assets/navegador.png';
 import avant from './assets/avantCell.png';
 import cybersec1 from './assets/cybersec.png';
