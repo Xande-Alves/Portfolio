@@ -54,13 +54,8 @@ const projetos = [
       {
         imagem: github,
         alt: "Imagem logo do Github.",
-        url: "https://github.com/Xande-Alves/Jogo-da_Forca_Streamlit",
-      },
-      {
-        imagem: nav,
-        alt: "Imagem de um monitor rodando uma aplicação.",
-        url: "https://jogo-daforcaapp-ynarfbbhhcnrhd6w5vw7al.streamlit.app/",
-      },
+        url: "https://github.com/Xande-Alves/Analise-estatistica-PNAD-2023-2025",
+      }
     ],
   },
   {
