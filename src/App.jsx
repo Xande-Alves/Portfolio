@@ -1,350 +1,464 @@
-import './app.scss';
-import { useState, useEffect, useRef } from 'react';
-import perfil from './assets/perfil.png';
-import html from './assets/html5.svg';
-import sass from './assets/sass.png';
-import react from './assets/react.png';
-import css from './assets/css3.svg';
-import js from './assets/javascript.svg';
-import python from './assets/python.webp';
-import java from './assets/java.webp';
-import linkedin from './assets/linkedin.png';
-import github from './assets/github.png';
-import email from './assets/email2.png';
-import whats from './assets/whatsapp.png';
-import uhuuu from './assets/uhuuuCell.png';
-import inboxai from './assets/InboxAI.png';
-import nav from './assets/navegador.png';
-import avant from './assets/avantCell.png';
-import cybersec1 from './assets/cybersec.png';
-import javacell from './assets/javacell.png';
-import cadastro from './assets/pythonCell.png';
-import livros from './assets/livrosCell.png';
-import portfolio from './assets/portfolioCell.png';
-import webstore from './assets/webstoreCell.png';
-import pepsi from './assets/pepsiCell.png';
-import anoNovo from './assets/2025Cell.png';
-import android from './assets/androidCell.png';
-import outubro from './assets/outubroCell.png';
-import githubB from './assets/githubBranco.png';
-import navB from './assets/navegadorB.png';
-import navP from './assets/navegadorP.png';
-import linkedinB from './assets/linkedinB.png';
-import emailB from './assets/emailB.png';
-import whatsB from './assets/whatsappB.png';
-import logo from './assets/logoT2.png';
-import linkedinP from './assets/linkedinP.png';
-import githubP from './assets/githubP.png';
-import emailP from './assets/emailP.png';
-import whatsP from './assets/whatsappP.png';
+import "./app.scss";
+import { useState, useEffect, useRef } from "react";
+import perfil from "./assets/perfil.png";
+import html from "./assets/html5.svg";
+import sass from "./assets/sass.png";
+import react from "./assets/react.png";
+import css from "./assets/css3.svg";
+import js from "./assets/javascript.svg";
+import python from "./assets/python.webp";
+import java from "./assets/java.webp";
+import linkedin from "./assets/linkedin.png";
+import github from "./assets/github.png";
+import email from "./assets/email2.png";
+import whats from "./assets/whatsapp.png";
+import uhuuu from "./assets/uhuuuCell.png";
+import inboxai from "./assets/InboxAI.png";
+import nav from "./assets/navegador.png";
+import avant from "./assets/avantCell.png";
+import cybersec1 from "./assets/cybersec.png";
+import javacell from "./assets/javacell.png";
+import cadastro from "./assets/pythonCell.png";
+import livros from "./assets/livrosCell.png";
+import portfolio from "./assets/portfolioCell.png";
+import webstore from "./assets/webstoreCell.png";
+import pepsi from "./assets/pepsiCell.png";
+import anoNovo from "./assets/2025Cell.png";
+import android from "./assets/androidCell.png";
+import outubro from "./assets/outubroCell.png";
+import githubB from "./assets/githubBranco.png";
+import navB from "./assets/navegadorB.png";
+import navP from "./assets/navegadorP.png";
+import linkedinB from "./assets/linkedinB.png";
+import emailB from "./assets/emailB.png";
+import whatsB from "./assets/whatsappB.png";
+import logo from "./assets/logoT2.png";
+import linkedinP from "./assets/linkedinP.png";
+import githubP from "./assets/githubP.png";
+import emailP from "./assets/emailP.png";
+import whatsP from "./assets/whatsappP.png";
+import forcaJS from "./assets/forcaJSCell.png";
+import forcaPython from "./assets/forcaPythonCell.png";
+import cCell from "./assets/C_Cell.png";
 
 const projetos = [
   {
-    titulo: 'Uhuuu!!!',
+    titulo: "Análises Estatísticas PNAD 2023 - 2025",
     descricao:
-      'O Uhuuu!!! nasceu com a proposta de conectar pessoas a eventos e estabelecimentos de entretenimento e lazer. Por meio de uma plataforma intuitiva e envolvente, os usuários podem explorar e descobrir eventos alinhados ao seu estado de espírito e objetivos, tornando seus momentos de diversão mais assertivos e memoráveis. Ao mesmo tempo, estabelecimentos e organizadores têm a oportunidade de divulgar seus eventos, ampliando seu alcance e aumentando as chances de sucesso. Com o Uhuuu!!!, todos saem ganhando – mais diversão para quem busca experiências e mais visibilidade para quem as oferece!',
-    imagem: uhuuu,
-    altImagem: 'Imagem de celular com o site do Uhuuu!!!.',
-    tecnologias: [
-      { imagem: sass, alt: 'Imagem logo do SASS.' },
-      { imagem: js, alt: 'Imagem logo do JavaScript.' },
-      { imagem: react, alt: 'Imagem logo do React.' },
-    ],
-    links: [
-      {
-        imagem: github,
-        alt: 'Imagem logo do Github.',
-        url: 'https://github.com/Xande-Alves/Uhuuu',
-      },
-      {
-        imagem: nav,
-        alt: 'Imagem de um monitor rodando uma aplicação.',
-        url: 'https://uhuuu.vercel.app/',
-      },
-    ],
-  },
-  {
-    titulo: 'InboxAI',
-    descricao:
-      'Um classificador de e-mails para uma empresa fictícia do setor financeiro chamada CAPITAL. A solução utiliza conexão com a OpenAI e se essa conexão falhar de alguma forma, entra no modelo local de respostas. Todas as instruções para poder rodar localmente, utilizando a API key da OpenAI, está no README. No link direto está utilizando o modelo de IA local.',
-    imagem: inboxai,
-    altImagem: 'Imagem de celular com o site do InboxAI.',
-    tecnologias: [
-      { imagem: html, alt: 'Imagem logo do HTML.' },
-      { imagem: css, alt: 'Imagem logo do CSS.' },
-      { imagem: js, alt: 'Imagem logo do JavaScript.' },
-      { imagem: python, alt: 'Imagem logo do Python.' }
-    ],
-    links: [
-      {
-        imagem: github,
-        alt: 'Imagem logo do Github.',
-        url: 'https://github.com/Xande-Alves/InboxAI',
-      },
-      {
-        imagem: nav,
-        alt: 'Imagem de um monitor rodando uma aplicação.',
-        url: 'https://inboxai-h0vw.onrender.com/',
-      },
-    ],
-  },
-  {
-    titulo: 'Livros Vai na Web',
-    descricao:
-      'O Livros Vai na Web é um site dedicado a incentivar a doação de livros que já não são utilizados, contribuindo para a educação de outras pessoas. Com uma interface simples, intuitiva e responsiva, o site foi desenvolvido como parte de um desafio da comunidade Vai na Web.Atualmente, a integração com o banco de dados está em desenvolvimento e em breve estará disponível. Participe você também e ajude a transformar a educação em sua cidade!',
-    imagem: livros,
-    altImagem: 'Imagem de celular com o site Livros Vai na Web.',
-    tecnologias: [
-      { imagem: sass, alt: 'Imagem logo do SASS.' },
-      { imagem: js, alt: 'Imagem logo do JavaScript.' },
-      { imagem: react, alt: 'Imagem logo do React.' },
-    ],
-    links: [
-      {
-        imagem: github,
-        alt: 'Imagem logo do Github.',
-        url: 'https://github.com/Xande-Alves/Desafio-Livros-Vai-na-Web',
-      },
-      {
-        imagem: nav,
-        alt: 'Imagem de um monitor rodando uma aplicação.',
-        url: 'https://desafio-livros-vai-na-web.vercel.app/',
-      },
-    ],
-  },
-  {
-    titulo: 'API Livros Vai na Web',
-    descricao:
-      'A API Livros Vai na Web é a parte de back-end que será integrada ao site Livros Vai na Web, permitindo assim acesso ao banco de dados. Depois de integrada, o usuário poderá cadastrar os livros que quer doar e ainda listar os livros doados. Tudo pela educação!!',
+      "Análises Estatísticas PNAD 2023 - 2025 foi um projeto desenvolvido com a finalidade de aprovação na disciplina de Estatística Aplicada no Curso de Análise e Desenvolvimento de Sistemas no IFPE, no segundo período (2026.1). O código em pnad.py baixa automaticamente os microdados dos quatro trimestres da PNAD de 2023 a 2025, filtrados para o estado de Pernambuco. O código em dashboard.py monta o dashboard utilizando stramlit com as análises estatísticas dos dados.",
     imagem: cadastro,
-    altImagem: 'Imagem de celular com a logo do Python.',
-    tecnologias: [{ imagem: python, alt: 'Imagem logo do Python.' }],
+    altImagem:
+      "Imagem de celular com o dashboard do projeto Análises Estatísticas PNAD 2023 - 2025",
+    tecnologias: [{ imagem: python, alt: "Imagem logo do Python." }],
     links: [
       {
         imagem: github,
-        alt: 'Imagem logo do Github.',
-        url: 'https://github.com/Xande-Alves/API_livros',
-      },
-    ],
-  },
-  {
-    titulo: 'Portfólio',
-    descricao:
-      'Este é o portfólio onde você se encontra! Resolvi postar aqui também para quem quisesse um link rápido para acessar o Github. Talvez possa inspirar ou servir para tirar alguma dúvida de algum outro desenvolvedor. Estamos juntos!!',
-    imagem: portfolio,
-    altImagem: 'Imagem de celular com o site do Portfólio de Alexandre Alves.',
-    tecnologias: [
-      { imagem: sass, alt: 'Imagem logo do SASS.' },
-      { imagem: js, alt: 'Imagem logo do JavaScript.' },
-      { imagem: react, alt: 'Imagem logo do React.' },
-    ],
-    links: [
-      {
-        imagem: github,
-        alt: 'Imagem logo do Github.',
-        url: 'https://github.com/Xande-Alves/Portfolio',
-      },
-    ],
-  },
-  {
-    titulo: 'Vai na WebStore',
-    descricao:
-      'A Vai na WebStore é um site que simula uma loja virtual com produtos fictícios. Nele, você pode explorar todos os itens disponíveis ou filtrá-los por categorias para facilitar sua busca. Ao encontrar um produto de interesse, é possível adicioná-lo ou removê-lo da sua lista de compras. No final, você pode revisar os itens selecionados e os detalhes da sua compra na página do carrinho. Venha fazer suas compras na Vai na WebStore!',
-    imagem: webstore,
-    altImagem: 'Imagem de celular com o site Vai na WebStore.',
-    tecnologias: [
-      { imagem: sass, alt: 'Imagem logo do SASS.' },
-      { imagem: js, alt: 'Imagem logo do JavaScript.' },
-      { imagem: react, alt: 'Imagem logo do React.' },
-    ],
-    links: [
-      {
-        imagem: github,
-        alt: 'Imagem logo do Github.',
-        url: 'https://github.com/Xande-Alves/Vai_na_WebStore',
+        alt: "Imagem logo do Github.",
+        url: "https://github.com/Xande-Alves/Jogo-da_Forca_Streamlit",
       },
       {
         imagem: nav,
-        alt: 'Imagem de um monitor rodando uma aplicação.',
-        url: 'https://vai-na-web-store.vercel.app/',
+        alt: "Imagem de um monitor rodando uma aplicação.",
+        url: "https://jogo-daforcaapp-ynarfbbhhcnrhd6w5vw7al.streamlit.app/",
       },
     ],
   },
   {
-    titulo: 'Avant Turismo PE',
+    titulo: "Sistema de controle de notas escolares em C",
     descricao:
-      'O site da Avant Turismo foi desenvolvido como parte do projeto Desenvolvimento de Comércio Eletrônico para Dispositivos Web Aplicado em Agenciamento Turístico, realizado na Escola Técnica de Pernambuco. Criamos uma plataforma moderna e atraente para a empresa, com o objetivo de conquistar novos clientes e fortalecer o negócio. Durante o processo, implementamos novas funcionalidades, eliminamos recursos obsoletos do antigo site e aprimoramos a experiência do usuário. O resultado? Um site atualizado, eficiente e a plena satisfação do cliente!',
-    imagem: avant,
-    altImagem: 'Imagem de celular com site da Avant Turismo.',
-    tecnologias: [
-      { imagem: html, alt: 'Imagem logo do HTML 5.' },
-      { imagem: css, alt: 'Imagem logo do CSS 3.' },
-      { imagem: js, alt: 'Imagem logo do JavaScript.' },
-    ],
+      "Mini projeto de sistema de controle de notas escolares em C. Projeto desenvolvido com a finalidade de aprovação na disciplina de Introdução a Linguagem C no Curso de Análise e Desenvolvimento de Sistemas no IFPE, no segundo período (2026.1).",
+    imagem: cCell,
+    altImagem: "Imagem de celular com a logo da linguagem C.",
+    tecnologias: [{}],
     links: [
-      { imagem: github, alt: 'Imagem logo do Github.', url: 'https://github.com/Xande-Alves/Avant_Turismo' },
       {
-        imagem: nav,
-        alt: 'Imagem de um monitor rodando uma aplicação.',
-        url: 'https://avant-turismo.vercel.app/',
+        imagem: github,
+        alt: "Imagem logo do Github.",
+        url: "https://github.com/Xande-Alves/Gerenciador-de-turmas-em-C",
       },
     ],
   },
   {
-    titulo: 'API em Java',
+    titulo:
+      "Sistema de gerenciamento de um comércio em JAVA gráfico, com Swing",
     descricao:
-      'API em Java, springboot, conexão mysql e swagger. Atentar para mudar usuário e senha do MySql no aplication.properties, se for rodar localmente.',
+      "Sistema de gerenciamento de um comércio em JAVA gráfico, com Swing, programado com orientação a objetos (POO). Projeto desenvolvido com a finalidade de aprovação na disciplina de Linguagem de Programação Orientada a Objetos no Curso de Análise e Desenvolvimento de Sistemas no IFPE, no segundo período (2026.1). Para acesso em usuário root, login: adm senha: 123",
     imagem: javacell,
-    altImagem: 'Imagem de celular com a logo do Java.',
-    tecnologias: [
-      { imagem: java, alt: 'Imagem logo do Java.' }
-    ],
+    altImagem: "Imagem de celular com a logo do Java.",
+    tecnologias: [{ imagem: java, alt: "Imagem logo do Java." }],
     links: [
       {
         imagem: github,
-        alt: 'Imagem logo do Github.',
-        url: 'https://github.com/Xande-Alves/API_JAVA',
+        alt: "Imagem logo do Github.",
+        url: "https://github.com/Xande-Alves/Sistema_de_Gerenciamento-SisGer-_Grafico",
       },
     ],
   },
   {
-    titulo: 'Relatório de Cibersegurança 1',
+    titulo: "Sistema de gerenciamento de um comércio em JAVA",
     descricao:
-      'Relatório do curso de Formação em Cibersegurança Kensei/Vai na Web - Módulo 1',
+      "Sistema de gerenciamento de um comércio em JAVA, programado com orientação a objetos (POO). Projeto desenvolvido com a finalidade de aprovação na disciplina de Linguagem de Programação Orientada a Objetos no Curso de Análise e Desenvolvimento de Sistemas no IFPE, no segundo período (2026.1). Para acesso em usuário root, login: adm senha: 123",
+    imagem: javacell,
+    altImagem: "Imagem de celular com a logo do Java.",
+    tecnologias: [{ imagem: java, alt: "Imagem logo do Java." }],
+    links: [
+      {
+        imagem: github,
+        alt: "Imagem logo do Github.",
+        url: "https://github.com/Xande-Alves/Sistema-de-gerenciamento-em-JAVA",
+      },
+    ],
+  },
+  {
+    titulo: "Jogo da Forca com Python e Streamlit",
+    descricao:
+      "O Jogo da Forca em Python, com a biblioteca Streamlit, foi um mini projeto desenvolvido com a finalidade de aprovação na disciplina de Introdução a Programação no Curso de Análise e Desenvolvimento de Sistemas no IFPE, no primeiro período (2025.2)",
+    imagem: forcaPython,
+    altImagem: "Imagem de celular com o Jogo da Forca em JavaScript.",
+    tecnologias: [{ imagem: python, alt: "Imagem logo do Python." }],
+    links: [
+      {
+        imagem: github,
+        alt: "Imagem logo do Github.",
+        url: "https://github.com/Xande-Alves/Jogo-da_Forca_Streamlit",
+      },
+      {
+        imagem: nav,
+        alt: "Imagem de um monitor rodando uma aplicação.",
+        url: "https://jogo-daforcaapp-ynarfbbhhcnrhd6w5vw7al.streamlit.app/",
+      },
+    ],
+  },
+  {
+    titulo: "Jogo da Forca em JavaScript",
+    descricao:
+      "O Jogo da Forca em JavaScript foi um mini projeto desenvolvido com a finalidade de aprovação na disciplina de Introdução a Programação no Curso de Análise e Desenvolvimento de Sistemas no IFPE, no primeiro período (2025.2)",
+    imagem: forcaJS,
+    altImagem: "Imagem de celular com o Jogo da Forca em JavaScript.",
+    tecnologias: [
+      { imagem: sass, alt: "Imagem logo do SASS." },
+      { imagem: js, alt: "Imagem logo do JavaScript." },
+      { imagem: react, alt: "Imagem logo do React." },
+    ],
+    links: [
+      {
+        imagem: github,
+        alt: "Imagem logo do Github.",
+        url: "https://github.com/Xande-Alves/Jogo_da_Forca",
+      },
+      {
+        imagem: nav,
+        alt: "Imagem de um monitor rodando uma aplicação.",
+        url: "https://jogo-da-forca-delta-nine.vercel.app/",
+      },
+    ],
+  },
+  {
+    titulo: "Uhuuu!!!",
+    descricao:
+      "O Uhuuu!!! nasceu com a proposta de conectar pessoas a eventos e estabelecimentos de entretenimento e lazer. Por meio de uma plataforma intuitiva e envolvente, os usuários podem explorar e descobrir eventos alinhados ao seu estado de espírito e objetivos, tornando seus momentos de diversão mais assertivos e memoráveis. Ao mesmo tempo, estabelecimentos e organizadores têm a oportunidade de divulgar seus eventos, ampliando seu alcance e aumentando as chances de sucesso. Com o Uhuuu!!!, todos saem ganhando – mais diversão para quem busca experiências e mais visibilidade para quem as oferece!",
+    imagem: uhuuu,
+    altImagem: "Imagem de celular com o site do Uhuuu!!!.",
+    tecnologias: [
+      { imagem: sass, alt: "Imagem logo do SASS." },
+      { imagem: js, alt: "Imagem logo do JavaScript." },
+      { imagem: react, alt: "Imagem logo do React." },
+    ],
+    links: [
+      {
+        imagem: github,
+        alt: "Imagem logo do Github.",
+        url: "https://github.com/Xande-Alves/Uhuuu",
+      },
+      {
+        imagem: nav,
+        alt: "Imagem de um monitor rodando uma aplicação.",
+        url: "https://uhuuu.vercel.app/",
+      },
+    ],
+  },
+  {
+    titulo: "InboxAI",
+    descricao:
+      "Um classificador de e-mails para uma empresa fictícia do setor financeiro chamada CAPITAL. A solução utiliza conexão com a OpenAI e se essa conexão falhar de alguma forma, entra no modelo local de respostas. Todas as instruções para poder rodar localmente, utilizando a API key da OpenAI, está no README. No link direto está utilizando o modelo de IA local.",
+    imagem: inboxai,
+    altImagem: "Imagem de celular com o site do InboxAI.",
+    tecnologias: [
+      { imagem: html, alt: "Imagem logo do HTML." },
+      { imagem: css, alt: "Imagem logo do CSS." },
+      { imagem: js, alt: "Imagem logo do JavaScript." },
+      { imagem: python, alt: "Imagem logo do Python." },
+    ],
+    links: [
+      {
+        imagem: github,
+        alt: "Imagem logo do Github.",
+        url: "https://github.com/Xande-Alves/InboxAI",
+      },
+      {
+        imagem: nav,
+        alt: "Imagem de um monitor rodando uma aplicação.",
+        url: "https://inboxai-h0vw.onrender.com/",
+      },
+    ],
+  },
+  {
+    titulo: "Livros Vai na Web",
+    descricao:
+      "O Livros Vai na Web é um site dedicado a incentivar a doação de livros que já não são utilizados, contribuindo para a educação de outras pessoas. Com uma interface simples, intuitiva e responsiva, o site foi desenvolvido como parte de um desafio da comunidade Vai na Web.Atualmente, a integração com o banco de dados está em desenvolvimento e em breve estará disponível. Participe você também e ajude a transformar a educação em sua cidade!",
+    imagem: livros,
+    altImagem: "Imagem de celular com o site Livros Vai na Web.",
+    tecnologias: [
+      { imagem: sass, alt: "Imagem logo do SASS." },
+      { imagem: js, alt: "Imagem logo do JavaScript." },
+      { imagem: react, alt: "Imagem logo do React." },
+    ],
+    links: [
+      {
+        imagem: github,
+        alt: "Imagem logo do Github.",
+        url: "https://github.com/Xande-Alves/Desafio-Livros-Vai-na-Web",
+      },
+      {
+        imagem: nav,
+        alt: "Imagem de um monitor rodando uma aplicação.",
+        url: "https://desafio-livros-vai-na-web.vercel.app/",
+      },
+    ],
+  },
+  {
+    titulo: "API Livros Vai na Web",
+    descricao:
+      "A API Livros Vai na Web é a parte de back-end que será integrada ao site Livros Vai na Web, permitindo assim acesso ao banco de dados. Depois de integrada, o usuário poderá cadastrar os livros que quer doar e ainda listar os livros doados. Tudo pela educação!!",
+    imagem: cadastro,
+    altImagem: "Imagem de celular com a logo do Python.",
+    tecnologias: [{ imagem: python, alt: "Imagem logo do Python." }],
+    links: [
+      {
+        imagem: github,
+        alt: "Imagem logo do Github.",
+        url: "https://github.com/Xande-Alves/API_livros",
+      },
+    ],
+  },
+  {
+    titulo: "Portfólio",
+    descricao:
+      "Este é o portfólio onde você se encontra! Resolvi postar aqui também para quem quisesse um link rápido para acessar o Github. Talvez possa inspirar ou servir para tirar alguma dúvida de algum outro desenvolvedor. Estamos juntos!!",
+    imagem: portfolio,
+    altImagem: "Imagem de celular com o site do Portfólio de Alexandre Alves.",
+    tecnologias: [
+      { imagem: sass, alt: "Imagem logo do SASS." },
+      { imagem: js, alt: "Imagem logo do JavaScript." },
+      { imagem: react, alt: "Imagem logo do React." },
+    ],
+    links: [
+      {
+        imagem: github,
+        alt: "Imagem logo do Github.",
+        url: "https://github.com/Xande-Alves/Portfolio",
+      },
+    ],
+  },
+  {
+    titulo: "Vai na WebStore",
+    descricao:
+      "A Vai na WebStore é um site que simula uma loja virtual com produtos fictícios. Nele, você pode explorar todos os itens disponíveis ou filtrá-los por categorias para facilitar sua busca. Ao encontrar um produto de interesse, é possível adicioná-lo ou removê-lo da sua lista de compras. No final, você pode revisar os itens selecionados e os detalhes da sua compra na página do carrinho. Venha fazer suas compras na Vai na WebStore!",
+    imagem: webstore,
+    altImagem: "Imagem de celular com o site Vai na WebStore.",
+    tecnologias: [
+      { imagem: sass, alt: "Imagem logo do SASS." },
+      { imagem: js, alt: "Imagem logo do JavaScript." },
+      { imagem: react, alt: "Imagem logo do React." },
+    ],
+    links: [
+      {
+        imagem: github,
+        alt: "Imagem logo do Github.",
+        url: "https://github.com/Xande-Alves/Vai_na_WebStore",
+      },
+      {
+        imagem: nav,
+        alt: "Imagem de um monitor rodando uma aplicação.",
+        url: "https://vai-na-web-store.vercel.app/",
+      },
+    ],
+  },
+  {
+    titulo: "Avant Turismo PE",
+    descricao:
+      "O site da Avant Turismo foi desenvolvido como parte do projeto Desenvolvimento de Comércio Eletrônico para Dispositivos Web Aplicado em Agenciamento Turístico, realizado na Escola Técnica de Pernambuco. Criamos uma plataforma moderna e atraente para a empresa, com o objetivo de conquistar novos clientes e fortalecer o negócio. Durante o processo, implementamos novas funcionalidades, eliminamos recursos obsoletos do antigo site e aprimoramos a experiência do usuário. O resultado? Um site atualizado, eficiente e a plena satisfação do cliente!",
+    imagem: avant,
+    altImagem: "Imagem de celular com site da Avant Turismo.",
+    tecnologias: [
+      { imagem: html, alt: "Imagem logo do HTML 5." },
+      { imagem: css, alt: "Imagem logo do CSS 3." },
+      { imagem: js, alt: "Imagem logo do JavaScript." },
+    ],
+    links: [
+      {
+        imagem: github,
+        alt: "Imagem logo do Github.",
+        url: "https://github.com/Xande-Alves/Avant_Turismo",
+      },
+      {
+        imagem: nav,
+        alt: "Imagem de um monitor rodando uma aplicação.",
+        url: "https://avant-turismo.vercel.app/",
+      },
+    ],
+  },
+  {
+    titulo: "API em Java",
+    descricao:
+      "API em Java, springboot, conexão mysql e swagger. Atentar para mudar usuário e senha do MySql no aplication.properties, se for rodar localmente.",
+    imagem: javacell,
+    altImagem: "Imagem de celular com a logo do Java.",
+    tecnologias: [{ imagem: java, alt: "Imagem logo do Java." }],
+    links: [
+      {
+        imagem: github,
+        alt: "Imagem logo do Github.",
+        url: "https://github.com/Xande-Alves/API_JAVA",
+      },
+    ],
+  },
+  {
+    titulo: "Relatório de Cibersegurança 1",
+    descricao:
+      "Relatório do curso de Formação em Cibersegurança Kensei/Vai na Web - Módulo 1",
     imagem: cybersec1,
-    altImagem: 'Imagem de celular com o um cadeado cybernético.',
-    tecnologias: [
-      
-    ],
+    altImagem: "Imagem de celular com o um cadeado cybernético.",
+    tecnologias: [],
     links: [
       {
         imagem: github,
-        alt: 'Imagem logo do Github.',
-        url: 'https://github.com/Xande-Alves/Relatorio_Cybersecurity_M1',
-      }
-    ],
-  },
-  {
-    titulo: 'Cadastro de pessoas',
-    descricao:
-      'O projeto de cadastro de pessoas é uma aplicação simples em Python, que permite registrar pessoas com os seguintes atributos: nome, idade, endereço e curso. Os dados são armazenados em uma lista, possibilitando, posteriormente, listar todos os cadastrados ou realizar buscas e filtros com base em qualquer um desses atributos. O projeto foi desenvolvido utilizando o paradigma de programação orientada a objetos, com uma classe Pessoa definida separadamente e instanciada sempre que um novo cadastro é realizado.',
-    imagem: cadastro,
-    altImagem: 'Imagem de celular com a logo do Python.',
-    tecnologias: [{ imagem: python, alt: 'Imagem logo do Python.' }],
-    links: [
-      {
-        imagem: github,
-        alt: 'Imagem logo do Github.',
-        url: 'https://github.com/Xande-Alves/Cadastro-python',
+        alt: "Imagem logo do Github.",
+        url: "https://github.com/Xande-Alves/Relatorio_Cybersecurity_M1",
       },
     ],
   },
   {
-    titulo: 'Pepsi',
+    titulo: "Cadastro de pessoas",
     descricao:
-      'O site da Pepsi é simples, mas visualmente atraente. Com funcionalidades como a troca de cores de plano de fundo, mudança de imagens e deslize de itens, proporciona uma experiência interativa e agradável para o usuário. Que tal criar algo moderno e envolvente para o seu produto também?',
+      "O projeto de cadastro de pessoas é uma aplicação simples em Python, que permite registrar pessoas com os seguintes atributos: nome, idade, endereço e curso. Os dados são armazenados em uma lista, possibilitando, posteriormente, listar todos os cadastrados ou realizar buscas e filtros com base em qualquer um desses atributos. O projeto foi desenvolvido utilizando o paradigma de programação orientada a objetos, com uma classe Pessoa definida separadamente e instanciada sempre que um novo cadastro é realizado.",
+    imagem: cadastro,
+    altImagem: "Imagem de celular com a logo do Python.",
+    tecnologias: [{ imagem: python, alt: "Imagem logo do Python." }],
+    links: [
+      {
+        imagem: github,
+        alt: "Imagem logo do Github.",
+        url: "https://github.com/Xande-Alves/Cadastro-python",
+      },
+    ],
+  },
+  {
+    titulo: "Pepsi",
+    descricao:
+      "O site da Pepsi é simples, mas visualmente atraente. Com funcionalidades como a troca de cores de plano de fundo, mudança de imagens e deslize de itens, proporciona uma experiência interativa e agradável para o usuário. Que tal criar algo moderno e envolvente para o seu produto também?",
     imagem: pepsi,
-    altImagem: 'Imagem de celular com o site da Pepsi.',
+    altImagem: "Imagem de celular com o site da Pepsi.",
     tecnologias: [
-      { imagem: sass, alt: 'Imagem logo do SASS.' },
-      { imagem: js, alt: 'Imagem logo do JavaScript.' },
-      { imagem: react, alt: 'Imagem logo do React.' },
+      { imagem: sass, alt: "Imagem logo do SASS." },
+      { imagem: js, alt: "Imagem logo do JavaScript." },
+      { imagem: react, alt: "Imagem logo do React." },
     ],
     links: [
       {
         imagem: github,
-        alt: 'Imagem logo do Github.',
-        url: 'https://github.com/Xande-Alves/Pepsi',
+        alt: "Imagem logo do Github.",
+        url: "https://github.com/Xande-Alves/Pepsi",
       },
       {
         imagem: nav,
-        alt: 'Imagem de um monitor rodando uma aplicação.',
-        url: 'https://pepsi-inky.vercel.app/',
+        alt: "Imagem de um monitor rodando uma aplicação.",
+        url: "https://pepsi-inky.vercel.app/",
       },
     ],
   },
   {
-    titulo: 'O código secreto',
+    titulo: "O código secreto",
     descricao:
-      'O Código Secreto foi um desafio lançado pela comunidade Vai na Web que, a princípio, era simples. No entanto, dei um passo além e tornei o programa inquebrável, implementando validações e tratamento de erros para lidar com possíveis respostas incorretas fornecidas pelo usuário. Desafio você a quebrá-lo!😉',
+      "O Código Secreto foi um desafio lançado pela comunidade Vai na Web que, a princípio, era simples. No entanto, dei um passo além e tornei o programa inquebrável, implementando validações e tratamento de erros para lidar com possíveis respostas incorretas fornecidas pelo usuário. Desafio você a quebrá-lo!😉",
     imagem: cadastro,
-    altImagem: 'Imagem de celular com a logo do Python.',
-    tecnologias: [{ imagem: python, alt: 'Imagem logo do Python.' }],
+    altImagem: "Imagem de celular com a logo do Python.",
+    tecnologias: [{ imagem: python, alt: "Imagem logo do Python." }],
     links: [
       {
         imagem: github,
-        alt: 'Imagem logo do Github.',
-        url: 'https://github.com/Xande-Alves/Realizando-missoes-VNW',
+        alt: "Imagem logo do Github.",
+        url: "https://github.com/Xande-Alves/Realizando-missoes-VNW",
       },
     ],
   },
   {
-    titulo: 'Feliz 2025!',
+    titulo: "Feliz 2025!",
     descricao:
-      'O site Feliz 2025! foi criado para desejar um feliz ano novo à comunidade de desenvolvedores, com um poema personalizado dedicado à área de tecnologia. Feliz 2025 para você também!',
+      "O site Feliz 2025! foi criado para desejar um feliz ano novo à comunidade de desenvolvedores, com um poema personalizado dedicado à área de tecnologia. Feliz 2025 para você também!",
     imagem: anoNovo,
-    altImagem: 'Imagem de celular com o site do Feliz 2025!',
+    altImagem: "Imagem de celular com o site do Feliz 2025!",
     tecnologias: [
-      { imagem: sass, alt: 'Imagem logo do SASS.' },
-      { imagem: js, alt: 'Imagem logo do JavaScript.' },
-      { imagem: react, alt: 'Imagem logo do React.' },
+      { imagem: sass, alt: "Imagem logo do SASS." },
+      { imagem: js, alt: "Imagem logo do JavaScript." },
+      { imagem: react, alt: "Imagem logo do React." },
     ],
     links: [
       {
         imagem: github,
-        alt: 'Imagem logo do Github.',
-        url: 'https://github.com/Xande-Alves/Feliz_2025',
+        alt: "Imagem logo do Github.",
+        url: "https://github.com/Xande-Alves/Feliz_2025",
       },
       {
         imagem: nav,
-        alt: 'Imagem de um monitor rodando uma aplicação.',
-        url: 'https://feliz-2025.vercel.app/',
+        alt: "Imagem de um monitor rodando uma aplicação.",
+        url: "https://feliz-2025.vercel.app/",
       },
     ],
   },
   {
-    titulo: 'Curiosidades Sobre Tecnologia',
+    titulo: "Curiosidades Sobre Tecnologia",
     descricao:
-      'O site Curiosidades sobre tecnologia foi elaborado para trazer, nessa matéria, a história do mascote do sistema operacional Android. Talvez você não saiba que o seu simpático mascote tem um nome e uma história muito curiosa? Pois acompanhe esse artigo para aprender muita coisa sobre esse robozinho.',
+      "O site Curiosidades sobre tecnologia foi elaborado para trazer, nessa matéria, a história do mascote do sistema operacional Android. Talvez você não saiba que o seu simpático mascote tem um nome e uma história muito curiosa? Pois acompanhe esse artigo para aprender muita coisa sobre esse robozinho.",
     imagem: android,
-    altImagem: 'Imagem de celular com site do Curiosidades Sobre Tecnologia.',
+    altImagem: "Imagem de celular com site do Curiosidades Sobre Tecnologia.",
     tecnologias: [
-      { imagem: html, alt: 'Imagem logo do HTML 5.' },
-      { imagem: css, alt: 'Imagem logo do CSS 3.' },
+      { imagem: html, alt: "Imagem logo do HTML 5." },
+      { imagem: css, alt: "Imagem logo do CSS 3." },
     ],
     links: [
       {
         imagem: github,
-        alt: 'Imagem logo do Github.',
-        url: 'https://github.com/Xande-Alves/Site-Android',
+        alt: "Imagem logo do Github.",
+        url: "https://github.com/Xande-Alves/Site-Android",
       },
       {
         imagem: nav,
-        alt: 'Imagem de um monitor rodando uma aplicação.',
-        url: 'https://site-android-six.vercel.app/',
+        alt: "Imagem de um monitor rodando uma aplicação.",
+        url: "https://site-android-six.vercel.app/",
       },
     ],
   },
   {
-    titulo: 'Outubro Rosa',
+    titulo: "Outubro Rosa",
     descricao:
-      'O site Outubro Rosa foi criado para conscientizar sobre a importância da prevenção e do diagnóstico precoce do câncer de mama. Por meio de diversos eventos e iniciativas, a campanha reúne pessoas engajadas em apoiar a causa e reforçar a importância do autocuidado. Cuide-se!',
+      "O site Outubro Rosa foi criado para conscientizar sobre a importância da prevenção e do diagnóstico precoce do câncer de mama. Por meio de diversos eventos e iniciativas, a campanha reúne pessoas engajadas em apoiar a causa e reforçar a importância do autocuidado. Cuide-se!",
     imagem: outubro,
-    altImagem: 'Imagem de celular com site do Outubro Rosa.',
+    altImagem: "Imagem de celular com site do Outubro Rosa.",
     tecnologias: [
-      { imagem: html, alt: 'Imagem logo do HTML 5.' },
-      { imagem: css, alt: 'Imagem logo do CSS 3.' },
+      { imagem: html, alt: "Imagem logo do HTML 5." },
+      { imagem: css, alt: "Imagem logo do CSS 3." },
     ],
     links: [
       {
         imagem: github,
-        alt: 'Imagem logo do Github.',
-        url: 'https://github.com/Xande-Alves/Outubro-Rosa',
+        alt: "Imagem logo do Github.",
+        url: "https://github.com/Xande-Alves/Outubro-Rosa",
       },
       {
         imagem: nav,
-        alt: 'Imagem de um monitor rodando uma aplicação.',
-        url: 'https://outubro-rosa-jet.vercel.app/',
+        alt: "Imagem de um monitor rodando uma aplicação.",
+        url: "https://outubro-rosa-jet.vercel.app/",
       },
     ],
   },
@@ -354,14 +468,14 @@ export default function App() {
   //MUDA MODO ESCURO/CLARO
   const [isDark, setIsDark] = useState(true);
   const [isDark2, setIsDark2] = useState(true);
-  const [nomeBotao, setNomeBotao] = useState('Modo Claro');
+  const [nomeBotao, setNomeBotao] = useState("Modo Claro");
   const toggleBackground = () => {
     setIsDark(!isDark);
     setIsDark2(!isDark2);
-    if (nomeBotao === 'Modo Claro') {
-      setNomeBotao('Modo Escuro');
+    if (nomeBotao === "Modo Claro") {
+      setNomeBotao("Modo Escuro");
     } else {
-      setNomeBotao('Modo Claro');
+      setNomeBotao("Modo Claro");
     }
   };
 
@@ -389,10 +503,10 @@ export default function App() {
       }
     };
 
-    document.addEventListener('click', handleClickFora);
+    document.addEventListener("click", handleClickFora);
 
     return () => {
-      document.removeEventListener('click', handleClickFora);
+      document.removeEventListener("click", handleClickFora);
     };
   }, []);
 
@@ -406,8 +520,8 @@ export default function App() {
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 800);
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   useEffect(() => {
@@ -418,24 +532,24 @@ export default function App() {
     };
 
     if (menuOpen) {
-      document.addEventListener('click', handleClickOutside);
+      document.addEventListener("click", handleClickOutside);
     } else {
-      document.removeEventListener('click', handleClickOutside);
+      document.removeEventListener("click", handleClickOutside);
     }
 
-    return () => document.removeEventListener('click', handleClickOutside);
+    return () => document.removeEventListener("click", handleClickOutside);
   }, [menuOpen]);
 
   //RENDERIZAÇÃO DOS PROJETOS EM TELAS MENORES QUE 800PX
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 800);
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return (
     <>
-      <header className={`header ${isDark ? 'dark' : 'light'}`}>
+      <header className={`header ${isDark ? "dark" : "light"}`}>
         <div className="divHeader">
           <div className="alexandre">
             <h1>Alexandre Alves</h1>
@@ -445,22 +559,22 @@ export default function App() {
             <nav>
               <ul>
                 <li>
-                  <a href="#link1" className={`${isDark ? 'dark' : 'light'}`}>
+                  <a href="#link1" className={`${isDark ? "dark" : "light"}`}>
                     Início
                   </a>
                 </li>
                 <li>
-                  <a href="#link2" className={`${isDark ? 'dark' : 'light'}`}>
+                  <a href="#link2" className={`${isDark ? "dark" : "light"}`}>
                     Skills and Softskills
                   </a>
                 </li>
                 <li>
-                  <a href="#link3" className={`${isDark ? 'dark' : 'light'}`}>
+                  <a href="#link3" className={`${isDark ? "dark" : "light"}`}>
                     Contatos
                   </a>
                 </li>
                 <li>
-                  <a href="#link4" className={`${isDark ? 'dark' : 'light'}`}>
+                  <a href="#link4" className={`${isDark ? "dark" : "light"}`}>
                     Projetos
                   </a>
                 </li>
@@ -468,7 +582,7 @@ export default function App() {
             </nav>
             <div className="modo">
               <button
-                className={`${isDark ? 'light' : 'dark'}`}
+                className={`${isDark ? "light" : "dark"}`}
                 onClick={toggleBackground}
               >
                 {nomeBotao}
@@ -493,7 +607,7 @@ export default function App() {
                       <li>
                         <a
                           href="#link1"
-                          className={`${isDark ? 'dark' : 'light'}`}
+                          className={`${isDark ? "dark" : "light"}`}
                         >
                           Início
                         </a>
@@ -501,7 +615,7 @@ export default function App() {
                       <li>
                         <a
                           href="#link2"
-                          className={`${isDark ? 'dark' : 'light'}`}
+                          className={`${isDark ? "dark" : "light"}`}
                         >
                           Skills and Softskills
                         </a>
@@ -509,7 +623,7 @@ export default function App() {
                       <li>
                         <a
                           href="#link3"
-                          className={`${isDark ? 'dark' : 'light'}`}
+                          className={`${isDark ? "dark" : "light"}`}
                         >
                           Contatos
                         </a>
@@ -517,7 +631,7 @@ export default function App() {
                       <li>
                         <a
                           href="#link4"
-                          className={`${isDark ? 'dark' : 'light'}`}
+                          className={`${isDark ? "dark" : "light"}`}
                         >
                           Projetos
                         </a>
@@ -526,7 +640,7 @@ export default function App() {
                   </nav>
                   <div className="modo">
                     <button
-                      className={`${isDark ? 'light' : 'dark'}`}
+                      className={`${isDark ? "light" : "dark"}`}
                       onClick={toggleBackground}
                     >
                       {nomeBotao}
@@ -539,7 +653,7 @@ export default function App() {
         </div>
       </header>
       <main className="main" id="link1">
-        <section className={`sobre ${isDark2 ? 'dark2' : 'light2'}`}>
+        <section className={`sobre ${isDark2 ? "dark2" : "light2"}`}>
           <img
             src={perfil}
             alt="Foto do desenvolvedor Alexandre Alves, sorrindo, descontraído e de óculos escuros."
@@ -591,7 +705,7 @@ export default function App() {
           </div>
         </section>
         <section
-          className={`skillsSoftskills ${isDark ? 'dark' : 'light'}`}
+          className={`skillsSoftskills ${isDark ? "dark" : "light"}`}
           id="link2"
         >
           <div className="tecnologias">
@@ -603,10 +717,10 @@ export default function App() {
                   alt="Imagem logo do HTML 5."
                   onClick={(e) => {
                     e.stopPropagation(); // Evita que o clique no próprio item feche a explicação
-                    ativaExplicacao('HTML');
+                    ativaExplicacao("HTML");
                   }}
                 />
-                {explicacaoAtiva === 'HTML' && (
+                {explicacaoAtiva === "HTML" && (
                   <div className="explicacao1">
                     <h2>HTML5</h2>
                     <p>
@@ -624,9 +738,9 @@ export default function App() {
                 <img
                   src={css}
                   alt="Imagem logo do CSS 3."
-                  onClick={() => ativaExplicacao('CSS')}
+                  onClick={() => ativaExplicacao("CSS")}
                 />
-                {explicacaoAtiva === 'CSS' && (
+                {explicacaoAtiva === "CSS" && (
                   <div className="explicacao1">
                     <h2>CSS3</h2>
                     <p>
@@ -644,9 +758,9 @@ export default function App() {
                 <img
                   src={sass}
                   alt="Imagem logo do SASS."
-                  onClick={() => ativaExplicacao('SASS')}
+                  onClick={() => ativaExplicacao("SASS")}
                 />
-                {explicacaoAtiva === 'SASS' && (
+                {explicacaoAtiva === "SASS" && (
                   <div className="explicacao1">
                     <h2>SASS</h2>
                     <p>
@@ -662,9 +776,9 @@ export default function App() {
                 <img
                   src={js}
                   alt="Imagem logo do JavaScript."
-                  onClick={() => ativaExplicacao('JS')}
+                  onClick={() => ativaExplicacao("JS")}
                 />
-                {explicacaoAtiva === 'JS' && (
+                {explicacaoAtiva === "JS" && (
                   <div className="explicacao1">
                     <h2>JAVASCRIPT</h2>
                     <p>
@@ -679,9 +793,9 @@ export default function App() {
                 <img
                   src={react}
                   alt="Imagem logo do React."
-                  onClick={() => ativaExplicacao('REACT')}
+                  onClick={() => ativaExplicacao("REACT")}
                 />
-                {explicacaoAtiva === 'REACT' && (
+                {explicacaoAtiva === "REACT" && (
                   <div className="explicacao1">
                     <h2>REACT</h2>
                     <p>
@@ -697,9 +811,9 @@ export default function App() {
                 <img
                   src={python}
                   alt="Imagem logo do Python."
-                  onClick={() => ativaExplicacao('PYTHON')}
+                  onClick={() => ativaExplicacao("PYTHON")}
                 />
-                {explicacaoAtiva === 'PYTHON' && (
+                {explicacaoAtiva === "PYTHON" && (
                   <div className="explicacao2">
                     <h2>PYTHON</h2>
                     <p>
@@ -717,9 +831,9 @@ export default function App() {
                 <img
                   src={java}
                   alt="Imagem logo do Java."
-                  onClick={() => ativaExplicacao('JAVA')}
+                  onClick={() => ativaExplicacao("JAVA")}
                 />
-                {explicacaoAtiva === 'JAVA' && (
+                {explicacaoAtiva === "JAVA" && (
                   <div className="explicacao2">
                     <h2>JAVA</h2>
                     <p>
@@ -760,7 +874,7 @@ export default function App() {
           </div>
         </section>
         <section id="link3">
-          <div className={`contatos ${isDark2 ? 'dark2' : 'light2'}`}>
+          <div className={`contatos ${isDark2 ? "dark2" : "light2"}`}>
             <h3>Contatos</h3>
             <div>
               <a
@@ -771,7 +885,7 @@ export default function App() {
                   src={iconeTecLinkedin}
                   alt="Imagem logo do Linkedin."
                   onMouseEnter={() => {
-                    if (nomeBotao === 'Modo Claro') {
+                    if (nomeBotao === "Modo Claro") {
                       setIconeTecLinkedin(linkedinB);
                     } else {
                       setIconeTecLinkedin(linkedinP);
@@ -785,7 +899,7 @@ export default function App() {
                   src={iconeTecGithub}
                   alt="Imagem logo do Github."
                   onMouseEnter={() => {
-                    if (nomeBotao === 'Modo Claro') {
+                    if (nomeBotao === "Modo Claro") {
                       setIconeTecGithub(githubB);
                     } else {
                       setIconeTecGithub(githubP);
@@ -799,7 +913,7 @@ export default function App() {
                   src={iconeTecEmail}
                   alt="Imagem logo de uma carta que simboliza o e-mail."
                   onMouseEnter={() => {
-                    if (nomeBotao === 'Modo Claro') {
+                    if (nomeBotao === "Modo Claro") {
                       setIconeTecEmail(emailB);
                     } else {
                       setIconeTecEmail(emailP);
@@ -817,7 +931,7 @@ export default function App() {
                   src={iconeTecWhatsapp}
                   alt="Imagem logo do Whatsapp."
                   onMouseEnter={() => {
-                    if (nomeBotao === 'Modo Claro') {
+                    if (nomeBotao === "Modo Claro") {
                       setIconeTecWhatsapp(whatsB);
                     } else {
                       setIconeTecWhatsapp(whatsP);
@@ -829,7 +943,7 @@ export default function App() {
             </div>
           </div>
         </section>
-        <section className={`projetos ${isDark ? 'dark' : 'light'}`} id="link4">
+        <section className={`projetos ${isDark ? "dark" : "light"}`} id="link4">
           <h3>Projetos</h3>
           <div className="listaProjetos">
             {projetos.map((projeto, index) => (
@@ -866,7 +980,7 @@ export default function App() {
                             alt={link.alt}
                             onMouseEnter={() => {
                               if (link.imagem === github) {
-                                if (nomeBotao === 'Modo Claro') {
+                                if (nomeBotao === "Modo Claro") {
                                   setHoveredImage((prev) => ({
                                     ...prev,
                                     [uniqueKey]: githubB,
@@ -878,7 +992,7 @@ export default function App() {
                                   }));
                                 }
                               } else {
-                                if (nomeBotao === 'Modo Claro') {
+                                if (nomeBotao === "Modo Claro") {
                                   setHoveredImage((prev) => ({
                                     ...prev,
                                     [uniqueKey]: navB,
@@ -951,7 +1065,7 @@ export default function App() {
                                   setHoveredImage((prev) => ({
                                     ...prev,
                                     [uniqueKey]:
-                                      nomeBotao === 'Modo Claro'
+                                      nomeBotao === "Modo Claro"
                                         ? githubB
                                         : githubP,
                                   }));
@@ -959,7 +1073,7 @@ export default function App() {
                                   setHoveredImage((prev) => ({
                                     ...prev,
                                     [uniqueKey]:
-                                      nomeBotao === 'Modo Claro' ? navB : navP,
+                                      nomeBotao === "Modo Claro" ? navB : navP,
                                   }));
                                 }
                               }}
@@ -982,7 +1096,7 @@ export default function App() {
           </div>
         </section>
       </main>
-      <footer className={`footer ${isDark2 ? 'dark2' : 'light2'}`}>
+      <footer className={`footer ${isDark2 ? "dark2" : "light2"}`}>
         <div>
           <img
             src={logo}
