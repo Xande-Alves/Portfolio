@@ -657,8 +657,8 @@ export default function App() {
             <h3>Sobre mim</h3>
             <p>
               Olá, meu nome é Alexandre Alves e estou em transição de carreira
-              para a área de tecnologia. Atualmente, curso o Técnico em
-              Desenvolvimento de Sistemas na Escola Técnica de Pernambuco,
+              para a área de tecnologia. Atualmente, curso o superior em Análise e
+              Desenvolvimento de Sistemas no Instituto Federal de Pernambuco -IFPE,
               aprofundando meus conhecimentos para criar soluções eficazes e
               inovadoras.
             </p>
